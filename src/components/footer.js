@@ -10,9 +10,6 @@ const Footer = () => (
       query SocialQuery {
         site {
           siteMetadata {
-            gatsby
-            bulma
-            twitter
             medium
             github
           }
@@ -23,21 +20,10 @@ const Footer = () => (
       <footer className='footer center has-background-light'>
         <div className='content has-text-centered'>
           <p className='is-size-4'>
-            This website was handcrafted with plenty cups of{' '}
+            This website is handcrafted  by members of the community with plenty cups of{' '}
             <Emoji emoji='☕' />
           </p>
-          <p className='is-size-4'>
-            By Aman Mittal (@amanhimself) using{' '}
-            <a href={data.site.siteMetadata.gatsby}>Gatsby</a> +{' '}
-            <a href={data.site.siteMetadata.bulma}>Bulma</a>
-          </p>
           <article className='media center'>
-            <span className='icon'>
-              <a href={data.site.siteMetadata.twitter}>
-                <FaTwitter size='fa-2x' color='blue' />
-              </a>
-            </span>
-            &nbsp;
             <span className='icon'>
               <a href={data.site.siteMetadata.github}>
                 <FaGithub size='fa-2x' color='black' />
@@ -51,12 +37,6 @@ const Footer = () => (
             </span>
             &nbsp;
           </article>
-          &nbsp;
-          <p className='is-size-5'>
-            You can also back or support this project for me to keep it updated
-            by{' '}
-            <a href='https://www.paypal.me/amanhimself/2'>Buying Me a Coffee</a>
-          </p>
         </div>
       </footer>
     )}
