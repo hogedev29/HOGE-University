@@ -11,7 +11,7 @@
 
 .heroBg {
   display: flex;
-  background: #272226;
+  background: #131212;
 }
 
 .hero-body .subtitle {
@@ -57,4 +57,22 @@
 .menu-label {
   font-size: 0.93em;
   font-weight: 700;
+}
+
+.top-header {
+  display: flex;
+}
+
+.top-header a {
+  color: #ffffff;
+  font-weight: 800;
+}
+
+.top-header .line {
+  height: 3px;
+  background-color: #00ba9d;
+}
+
+.top-header .underline-link {
+  margin-right: 1rem;
 }
