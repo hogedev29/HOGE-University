@@ -24,6 +24,7 @@ exports.createPages = ({ actions, graphql }) => {
           id
           frontmatter {
             title
+            subtitle
             date
             slug
           }
@@ -41,6 +42,7 @@ exports.createPages = ({ actions, graphql }) => {
         path: page.frontmatter.slug,
         component: template,
         context: {
+          subtitle: page.frontmatter.subtitle,
           title: page.frontmatter.title,
           slug: page.frontmatter.slug,
         },
