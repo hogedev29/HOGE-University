@@ -16,7 +16,13 @@ const Midsection = ({ children }) => (
                   <Link to="/what-is-hoge">What is HOGE</Link>
                 </li>
                 <li>
-                  <Link to="/about">How can i buy HOGE</Link>
+                  <Link to="/how-to-buy">How can i buy HOGE</Link>
+                </li>
+              </ul>
+              <p className="menu-label">Crypto school</p>
+              <ul className="menu-list">
+                <li>
+                  <Link to="/what-is-hoge">Learning Videos</Link>
                 </li>
               </ul>
               <p className="menu-label">Links</p>

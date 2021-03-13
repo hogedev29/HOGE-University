@@ -4,7 +4,7 @@ module.exports = {
     author: "Sserra",
     description: "Learning resources for HOGE",
     keywords: `HOGE`,
-    imageUrl:"",
+    imageUrl: "",
     twitter: "https://twitter.com/amanhimself",
     github: `https://github.com/amandeepmittal`,
     medium: "https://medium.com/@amanhimself",
@@ -44,7 +44,9 @@ module.exports = {
         extensions: [`.mdx`, `.md`],
       },
     },
-    `gatsby-transformer-remark`,
+
+    "gatsby-transformer-remark",
+
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -52,5 +54,6 @@ module.exports = {
         path: `${__dirname}/src/markdown-pages`,
       },
     },
+    "gatsby-remark-responsive-iframe",
   ],
 };
