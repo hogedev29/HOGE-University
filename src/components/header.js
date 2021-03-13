@@ -4,7 +4,7 @@ import "./style.scss";
 
 import hogeLogo from "../images/hoge-logo.png";
 
-const UnderlineLink = ({ url, title }) => (
+export const UnderlineLink = ({ url, title }) => (
   <div className="underline-link">
     <a rel="noreferrer" target="_blank" href={url}>
       {title}
