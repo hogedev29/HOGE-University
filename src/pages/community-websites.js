@@ -7,13 +7,13 @@ const Websites = () => (
   <Layout>
     <section className="hero">
       <div className="hero-body">
-        <p className="title is-1">Offical websites</p>
-        <p className="subtitle is-4">List of official websites</p>
+        <p className="title is-1">Community websites</p>
+        <p className="subtitle is-4">List of community websites</p>
       </div>
     </section>
 
     <section>
-      <Links links={content.websites.offical} />
+      <Links links={content.websites.community} />
     </section>
   </Layout>
 );
