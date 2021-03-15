@@ -1,8 +1,7 @@
 import React from "react";
-import { FaTwitter, FaGithub, FaMedium } from "react-icons/fa";
-import { StaticQuery, graphql } from "gatsby";
 import "./style.scss";
 import { Heading } from "react-bulma-components";
+import footer from "../content/footer";
 
 const FooterColumn = ({ title, items }) => (
   <div>
@@ -14,12 +13,8 @@ const FooterColumn = ({ title, items }) => (
         items.map((el) => {
           return (
             <li>
-              <a
-                rel="noreferrer"
-                target="_blank"
-                href="https://www.hoge.finance"
-              >
-                {el}
+              <a rel="noreferrer" target="_blank" href={el.url}>
+                {el.title}
               </a>
             </li>
           );
@@ -28,26 +23,30 @@ const FooterColumn = ({ title, items }) => (
   </div>
 );
 const Footer = () => (
-  <StaticQuery
-    query={graphql`
-      query SocialQuery {
-        site {
-          siteMetadata {
-            medium
-            github
-          }
-        }
-      }
-    `}
-    render={(data) => (
-      <section className="footer">
-        <div className="container">
-          <div className="footer-hero mb-6">
-            <Heading className="center">Explore more of Hoge!</Heading>
-            <p className="center">Can't get enough? We understand!</p>
-          </div>
-          <div class="columns">
+  <section className="footer">
+    <div className="container">
+      <div className="footer-hero mb-6">
+        <Heading className="center">Explore more of HOGE!</Heading>
+        <p className="center">Can't get enough? We understand!</p>
+      </div>
+
+      <div class="columns">
+        {footer.sections.map((el) => {
+          return (
             <div class="column has-text-centered">
+              <FooterColumn title={el.title} items={el.children} />
+            </div>
+          );
+        })}
+      </div>
+    </div>
+  </section>
+);
+
+export default Footer;
+
+/**
+ *     <div class="column has-text-centered">
               <FooterColumn title="Explore" items={["Facebook", "Twitter"]} />
             </div>
             <div class="column has-text-centered">
@@ -59,11 +58,4 @@ const Footer = () => (
             <div class="column has-text-centered">
               <FooterColumn title="Social" items={["Facebook"]} />
             </div>
-          </div>
-        </div>
-      </section>
-    )}
-  />
-);
-
-export default Footer;
+ */
