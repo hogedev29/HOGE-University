@@ -3,10 +3,7 @@ import React from "react";
 import "./style.scss";
 
 import hogeLogo from "../images/hoge-logo.png";
-import coinMarketcap from "../images/coinMarketcap.png";
-import coinbase from "../images/coinbase.png";
-import whitebit from "../images/whitebit.png";
-import blockfolio from "../images/blockfolio.svg";
+import header from "../content/header";
 
 export const UnderlineLink = ({ url, title }) => (
   <div className="underline-link">
@@ -37,42 +34,15 @@ const Header = ({ siteTitle }) => (
         </div>
         <div className="exchanges has-text-centered center columns">
           <div className="column" />
-          <div className="column">
-            <a
-              rel="noreferrer"
-              target="_blank"
-              href="https://coinmarketcap.com/currencies/hoge-finance/"
-            >
-              <img src={coinMarketcap}></img>
-            </a>
-          </div>
-          <div className="column">
-            <a
-              rel="noreferrer"
-              target="_blank"
-              href="https://www.coinbase.com/price/hoge-finance"
-            >
-              <img src={coinbase}></img>
-            </a>
-          </div>
-          <div className="column">
-            <a
-              rel="noreferrer"
-              target="_blank"
-              href="https://whitebit.com/trade/HOGE_USDT"
-            >
-              <img src={whitebit}></img>
-            </a>
-          </div>
-          <div className="column">
-            <a
-              rel="noreferrer"
-              target="_blank"
-              href="https://blockfolio.com/coin/HOGE"
-            >
-              <img src={blockfolio}></img>
-            </a>
-          </div>
+          {header.exchanges.map((el) => {
+            return (
+              <div className="column">
+                <a rel="noreferrer" target="_blank" href={el.url}>
+                  <img src={el.image}></img>
+                </a>
+              </div>
+            );
+          })}
           <div className="column" />
         </div>
       </div>
