@@ -17,10 +17,11 @@ const Header = ({ siteTitle }) => (
   <section className="hero heroBg is-small">
     <div className="hero-body">
       <div className="top-header center mb-6">
-        <UnderlineLink url="https://www.hoge.finance" title="HOGE WEBSITE" />
-        <UnderlineLink url="https://www.hogefinance.shop" title="HOGE SHOP" />
-        <UnderlineLink url="https://www.hoge.fun" title="HOGE FUN" />
-        <UnderlineLink url="https://www.hogemint.com" title="HOGE MINT" />
+        <UnderlineLink url="https://hoge.finance" title="HOGE WEBSITE" />
+        <UnderlineLink url="https://hogefinance.shop" title="HOGE SHOP" />
+        <UnderlineLink url="https://hoge.fun" title="HOGE FUN" />
+        <UnderlineLink url="https://hogemint.com" title="HOGE MINT" />
+        <UnderlineLink url="https://hoge.fun/donate" title="HOGE DONATE" />
       </div>
 
       <div className="header container center">

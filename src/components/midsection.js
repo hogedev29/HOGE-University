@@ -9,25 +9,27 @@ const Midsection = ({ children }) => (
     <section className="section">
       <div className="container">
         <div className="columns">
-          <div className="column is-one-fifth">
-            <aside className="menu">
-              {menu.sections.map((section) => {
-                return (
-                  <div className="menu-section">
-                    <p className="menu-label">{section.title}</p>
-                    <ul className="menu-list">
-                      {section.children.map((item) => {
-                        return (
-                          <li>
-                            <Link to={item.slug}>{item.title}</Link>
-                          </li>
-                        );
-                      })}
-                    </ul>
-                  </div>
-                );
-              })}
-            </aside>
+          <div className="column is-one-quarter">
+            <div className="menu-box">
+              <aside className="menu side-menu">
+                {menu.sections.map((section) => {
+                  return (
+                    <div className="menu-section">
+                      <p className="menu-label">{section.title}</p>
+                      <ul className="menu-list">
+                        {section.children.map((item) => {
+                          return (
+                            <li>
+                              <Link to={item.slug}>{item.title}</Link>
+                            </li>
+                          );
+                        })}
+                      </ul>
+                    </div>
+                  );
+                })}
+              </aside>
+            </div>
           </div>
 
           <div className="column">{children}</div>

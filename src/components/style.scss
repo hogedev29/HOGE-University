@@ -34,23 +34,60 @@
 }
 
 .links-list > li {
+  min-width: 18.5rem;
+  cursor: pointer;
+  display: inline-block;
+  margin-right: 2rem;
   margin-bottom: 1rem;
 }
 
-.menu-section {
-  margin-top: 1rem;
+.menu-box {
+  background-color: white;
+  border-radius: 6px;
+  box-shadow: 0 0.5em 0.5em 0em rgba(10, 10, 10, 0.1),
+    0 0px 0 1px rgba(10, 10, 10, 0.02);
+  color: #4a4a4a;
+  display: block;
+  padding: 1.25rem;
 }
 
-.menu-label {
-  font-size: 0.93em;
-  font-weight: 700;
+.side-menu {
+  .menu-section {
+    margin-top: 1rem;
+  }
+
+  .menu-label {
+    color: rgb(153, 153, 153);
+    font-size: 1em;
+    font-weight: 600;
+  }
+
+  .menu-list {
+    a {
+      text-transform: uppercase;
+      font-size: 0.85rem;
+    }
+    a:hover {
+      font-weight: 700;
+      background-color: #00ba9d;
+      color: #ffffff;
+    }
+  }
 }
 
 .top-header {
   display: flex;
 
   .underline-link {
+    padding: 0.4rem;
     margin-right: 1rem;
+  }
+  .underline-link:hover {
+    .line {
+      display: none;
+    }
+    cursor: pointer;
+    background-color: #00ba9d;
   }
 }
 
@@ -99,11 +136,17 @@
 
 .footer-list {
   li {
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.8rem;
   }
   li a {
     color: #e4c033;
     font-weight: 600;
     letter-spacing: 0.13rem;
+  }
+  a:hover {
+    color: #fff;
+    padding: 0.3rem;
+    font-weight: 700;
+    background-color: #e4c033;
   }
 }
