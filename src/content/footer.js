@@ -33,7 +33,7 @@ export default {
       title: "HOGE Official",
       children: [
         {
-          title: "HOGE Websites",
+          title: "HOGE Website",
           url: "https://hoge.finance/",
         },
         {
