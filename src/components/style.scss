@@ -44,6 +44,7 @@
 .links-list > li {
   min-width: 18.5rem;
   cursor: pointer;
+  display: inline-block;
   margin-right: 2rem;
   margin-bottom: 1rem;
 }
@@ -90,6 +91,7 @@
 
 .top-header {
   display: flex;
+  justify-content: space-between;
 
   .underline-link {
     padding: 0.4rem;
@@ -101,6 +103,22 @@
     }
     cursor: pointer;
     background-color: #00ba9d;
+  }
+
+  .side-menu {
+    button:hover {
+      color: #ffffff;
+      background: #00ba9d;
+    }
+    button {
+      font-weight: 600;
+      text-transform: uppercase;
+      margin-right: 0.5rem;
+      background: transparent;
+      border-color: #ffffff;
+      color: #ffffff;
+      border-width: 0.15rem;
+    }
   }
 }
 
