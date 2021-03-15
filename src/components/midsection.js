@@ -20,7 +20,9 @@ const Midsection = ({ children }) => (
                         {section.children.map((item) => {
                           return (
                             <li>
-                              <Link to={item.slug}>{item.title}</Link>
+                              <Link activeClassName="active" to={item.slug}>
+                                {item.title}
+                              </Link>
                             </li>
                           );
                         })}
