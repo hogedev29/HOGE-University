@@ -1,4 +1,4 @@
-import coinMarketcap from "../images/coinMarketcap.png";
+import coinMarketcap from "../images/coinmarketcap.png";
 import coinbase from "../images/coinbase.png";
 import whitebit from "../images/whitebit.png";
 import blockfolio from "../images/blockfolio.svg";
