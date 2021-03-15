@@ -4,9 +4,17 @@
 // Importing Bulma from node_modules
 @import "~bulma/bulma.sass";
 
-.header .title {
-  color: #ffffff;
-  font-size: 3.5rem;
+.header {
+  .title {
+    color: #ffffff;
+    font-size: 3.5rem;
+  }
+  .exchanges {
+    img {
+      height: 60%;
+      width: 60%;
+    }
+  }
 }
 
 .heroBg {
