@@ -16,17 +16,20 @@ const Midsection = ({ children }) => (
                   return (
                     <div className="menu-section">
                       <p className="menu-label">{section.title}</p>
-                      <ul className="menu-list">
-                        {section.children.map((item) => {
-                          return (
-                            <li>
-                              <Link activeClassName="active" to={item.slug}>
-                                {item.title}
-                              </Link>
-                            </li>
-                          );
-                        })}
-                      </ul>
+
+                      {section.children && (
+                        <ul className="menu-list">
+                          {section.children.map((item) => {
+                            return (
+                              <li>
+                                <Link activeClassName="active" to={item.slug}>
+                                  {item.title}
+                                </Link>
+                              </li>
+                            );
+                          })}
+                        </ul>
+                      )}
                     </div>
                   );
                 })}

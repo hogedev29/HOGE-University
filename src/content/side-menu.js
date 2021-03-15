@@ -11,6 +11,18 @@ export default {
           title: "How can i buy HOGE?",
           slug: "/how-to-buy",
         },
+        {
+          title: "How can i help HOGE",
+          slug: "/how-to-help",
+        },
+        {
+          title: "Ongoing initiatives",
+          slug: "/how-to-help",
+        },
+        {
+          title: "Roadmap",
+          slug: "/how-to-help",
+        },
       ],
     },
 
@@ -66,12 +78,22 @@ export default {
       ],
     },
     {
-      title: "Youtube Channels",
-      children: [],
+      title: "Youtube",
+      children: [
+        {
+          title: "Channels",
+          slug: "/youtube-channels",
+        },
+      ],
     },
     {
       title: "F.A.Q",
-      children: [],
+      children: [
+        {
+          title: "Frequently asked questions",
+          slug: "/faq",
+        },
+      ],
     },
     {
       title: "Merchandise",
