@@ -37,7 +37,6 @@ exports.createPages = ({ actions, graphql }) => {
     }
     // create page for each mdx file
     result.data.allMdx.nodes.forEach((page) => {
-      console.log("page :>> ", page.frontmatter.title);
       createPage({
         path: page.frontmatter.slug,
         component: template,

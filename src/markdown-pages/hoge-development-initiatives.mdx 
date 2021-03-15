@@ -1,0 +1,14 @@
+---
+slug: "hoge-dev-initiatives"
+date: "2021-03-12"
+title: "Development initiatives"
+subtitle: "Ideas and ongoing initiatives"
+---
+
+import { Box, Content, Section } from "react-bulma-components";
+
+<Content>
+  <Section>
+    <p>TBD</p>
+  </Section>
+</Content>

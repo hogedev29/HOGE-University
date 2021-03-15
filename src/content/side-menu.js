@@ -13,11 +13,11 @@ export default {
         },
         {
           title: "How can i help HOGE",
-          slug: "/how-to-help",
+          slug: "/help-hoge",
         },
         {
           title: "Ongoing initiatives",
-          slug: "/how-to-help",
+          slug: "/hoge-initiatives",
         },
         {
           title: "Roadmap",
@@ -54,12 +54,12 @@ export default {
       children: [
         {
           title: "What is HOGE Foundation",
-          slug: "/official-websites",
+          slug: "/hoge-foundation",
         },
 
         {
           title: "Initiatives",
-          slug: "/community-websites",
+          slug: "/hoge-foundation-initiatives",
         },
       ],
     },
@@ -68,12 +68,12 @@ export default {
       children: [
         {
           title: "How to contribute",
-          slug: "/official-websites",
+          slug: "/hoge-development",
         },
 
         {
           title: "Initiatives",
-          slug: "/community-websites",
+          slug: "/hoge-dev-initiatives",
         },
       ],
     },
@@ -91,7 +91,7 @@ export default {
       children: [
         {
           title: "Frequently asked questions",
-          slug: "/faq",
+          slug: "/hoge-faq",
         },
       ],
     },
@@ -100,12 +100,12 @@ export default {
       children: [
         {
           title: "HOGE Shop",
-          slug: "/official-websites",
+          slug: "/hoge-shop",
         },
 
         {
           title: "Hogernaut Store",
-          slug: "/community-websites",
+          slug: "/hogernaut-store",
         },
       ],
     },

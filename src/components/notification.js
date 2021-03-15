@@ -6,7 +6,10 @@ const Notification = () => (
     <section>
       <Message color="danger has-text-centered">
         <Message.Body>
-          Help developers. <strong>HOGE developers</strong>, need your help!
+          <p>
+            <strong>HOGE developers</strong>, need your help!
+          </p>
+          <a href="https://hoge.fun/donate">Donate</a>
         </Message.Body>
       </Message>
     </section>
