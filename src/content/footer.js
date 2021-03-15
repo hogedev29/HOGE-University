@@ -4,6 +4,10 @@ export default {
       title: "Social",
       children: [
         {
+          title: "Reddit",
+          url: "https://reddit.com/r/hoge",
+        },
+        {
           title: "Twitter",
           url: "https://twitter.com/hogefinance",
         },
