@@ -10,12 +10,12 @@ export default function Template({ data }) {
   return (
     <Layout>
       <div className="container">
-        <Section>
-          <Heading>
-            <strong>{frontmatter.title}</strong>
-          </Heading>
-          <Heading subtitle>{frontmatter.subtitle}</Heading>
-        </Section>
+        <div className="hero">
+          <div className="hero-body">
+            <p className="title is-1">{frontmatter.title}</p>
+            <p className="subtitle is-4">{frontmatter.subtitle}</p>
+          </div>
+        </div>
         <MDXRenderer>{body}</MDXRenderer>
       </div>
     </Layout>
