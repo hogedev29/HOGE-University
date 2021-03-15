@@ -17,12 +17,33 @@ export const UnderlineLink = ({ url, title }) => (
 const Header = ({ siteTitle }) => (
   <section className="hero heroBg is-small">
     <div className="hero-body">
-      <div className="top-header center mb-6">
-        <UnderlineLink url="https://hoge.finance" title="HOGE WEBSITE" />
-        <UnderlineLink url="https://hogefinance.shop" title="HOGE SHOP" />
-        <UnderlineLink url="https://hoge.fun" title="HOGE FUN" />
-        <UnderlineLink url="https://hogemint.com" title="HOGE MINT" />
-        <UnderlineLink url="https://hoge.fun/donate" title="HOGE DONATE" />
+      <div className="top-header mb-6">
+        <div className="center">
+          <UnderlineLink url="https://hoge.finance" title="HOGE WEBSITE" />
+          <UnderlineLink url="https://hogefinance.shop" title="HOGE SHOP" />
+          <UnderlineLink url="https://hoge.fun" title="HOGE FUN" />
+          <UnderlineLink url="https://hogemint.com" title="HOGE MINT" />
+          <UnderlineLink url="https://hoge.fun/donate" title="HOGE DONATE" />
+        </div>
+        <div className="side-menu">
+          <a
+            target="_blank"
+            rel="noreferrer"
+            href="https://whitebit.com/trade/HOGE_USDT"
+          >
+            <button class="button is-rounded">Buy in WhiteBit</button>
+          </a>
+          <a target="_blank" rel="noreferrer" href="">
+            <button class="button is-rounded">Buy in BKEX</button>
+          </a>
+          <a
+            target="_blank"
+            rel="noreferrer"
+            href="https://app.uniswap.org/#/swap?slippage=500&outputCurrency=0xfad45e47083e4607302aa43c65fb3106f1cd7607"
+          >
+            <button class="button is-rounded">Buy in UniSwap</button>
+          </a>
+        </div>
       </div>
 
       <div className="header container">
