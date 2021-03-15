@@ -6,7 +6,6 @@ import { Section, Heading } from "react-bulma-components";
 import { StaticImage } from "gatsby-plugin-image";
 
 export default function Template({ data }) {
-  console.log("data :>> ", data);
   const { body, frontmatter } = data.mdx;
   return (
     <Layout>
