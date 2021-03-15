@@ -30,6 +30,12 @@ export default {
         url: "https://www.hogemint.com",
         subtitle: "Mint you assert here!",
       },
+      {
+        image: hogeLogo,
+        title: "HOGE DONATE",
+        url: "https://www.hoge.fun/donate",
+        subtitle: "Help HOGE team and developers!",
+      },
     ],
     community: [
       {
