@@ -25,7 +25,17 @@ const Header = ({ siteTitle }) => (
           <UnderlineLink url="https://hogemint.com" title="HOGE MINT" />
           <UnderlineLink url="https://hoge.fun/donate" title="HOGE DONATE" />
         </div>
-        <div className="side-menu">
+      </div>
+
+      <div className="header container">
+        <div className="banner center mb-6">
+          <figure className="icon logo media-left">
+            <img src={hogeLogo} alt="hoge-logo" />
+          </figure>
+          <h1 className="title">HOGE.University</h1>
+        </div>
+
+        <div className="center buying-options mb-6">
           <a
             target="_blank"
             rel="noreferrer"
@@ -44,15 +54,7 @@ const Header = ({ siteTitle }) => (
             <button class="button is-rounded">Buy in UniSwap</button>
           </a>
         </div>
-      </div>
 
-      <div className="header container">
-        <div className="center mb-6">
-          <figure className="icon logo media-left">
-            <img src={hogeLogo} alt="hoge-logo" />
-          </figure>
-          <h1 className="title">HOGE.University</h1>
-        </div>
         <div className="exchanges has-text-centered center columns">
           <div className="column" />
           {header.exchanges.map((el) => {
