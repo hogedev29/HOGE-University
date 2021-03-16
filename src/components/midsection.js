@@ -1,47 +1,81 @@
-import React from "react";
+import React, { Component } from "react";
 
 import "./style.scss";
 import { Link } from "gatsby";
+import { Menu, Button } from "react-bulma-components";
 import menu from "../content/side-menu";
 
-const Midsection = ({ children }) => (
-  <div>
-    <section className="section">
-      <div className="container">
-        <div className="columns">
-          <div className="column is-one-quarter">
-            <div className="menu-box">
-              <aside className="menu side-menu">
-                {menu.sections.map((section) => {
-                  return (
-                    <div className="menu-section">
-                      <p className="menu-label">{section.title}</p>
-
-                      {section.children && (
-                        <ul className="menu-list">
-                          {section.children.map((item) => {
-                            return (
-                              <li>
-                                <Link activeClassName="active" to={item.slug}>
-                                  {item.title}
-                                </Link>
-                              </li>
-                            );
-                          })}
-                        </ul>
-                      )}
-                    </div>
-                  );
-                })}
-              </aside>
-            </div>
-          </div>
-
-          <div className="column">{children}</div>
-        </div>
-      </div>
-    </section>
-  </div>
+export const SideMenu = ({ className, showMenu }) => (
+  <nav
+    className={`${className} side-nav-container`}
+    role="navigation"
+    aria-label="main navigation"
+  >
+    <nav className="side-nav">
+      <Menu>
+        {menu.sections.map((section) => {
+          return (
+            <Menu.List title={section.title}>
+              {section.children.map((item) => {
+                return (
+                  <Menu.List.Item>
+                    <Link activeClassName="active" to={item.slug}>
+                      {item.title}
+                    </Link>
+                  </Menu.List.Item>
+                );
+              })}
+            </Menu.List>
+          );
+        })}
+      </Menu>
+    </nav>
+  </nav>
 );
 
+class Midsection extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      showMenu: false,
+    };
+  }
+
+  toggleMenu = () => {
+    this.setState((prevState) => ({
+      showMenu: !prevState.showMenu,
+    }));
+  };
+
+  render() {
+    return (
+      <div className="container">
+        <div className="columns section">
+          <div className="column side-nav-column">
+            <SideMenu
+              className={"full-side-nav"}
+              showMenu={this.state.showMenu}
+            />
+          </div>
+          <div className="column">
+            <div>{this.props.children}</div>
+          </div>
+        </div>
+      </div>
+    );
+  }
+}
+
 export default Midsection;
+/**
+ * <div>
+          <Button
+            className="sidebar-btn"
+            color="primary"
+            onClick={this.toggleMenu}
+            rounded={true}
+          >
+            Show sidebar
+          </Button>
+        </div>
+ */

@@ -2,7 +2,7 @@ import React from "react";
 import { Message } from "react-bulma-components";
 
 const Notification = () => (
-  <div className="container toast mt-4">
+  <div className="center">
     <section>
       <Message color="danger has-text-centered">
         <Message.Body>
