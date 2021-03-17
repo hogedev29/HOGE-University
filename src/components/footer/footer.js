@@ -1,5 +1,4 @@
 import React from "react";
-import "./footer.scss";
 import { Heading } from "react-bulma-components";
 import footer from "../../content/footer";
 
