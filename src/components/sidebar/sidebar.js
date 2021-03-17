@@ -7,28 +7,26 @@ import menu from "../../content/side-menu";
 
 export const SideMenu = ({ className, show }) => (
   <nav
-    className={`${show ? "side-nav-show" : ""} ${className}`}
+    className={`${show ? "side-nav-show" : ""} ${className} side-nav`}
     role="navigation"
     aria-label="main navigation"
   >
-    <nav className="side-nav">
-      <Menu>
-        {menu.sections.map((section) => {
-          return (
-            <Menu.List title={section.title}>
-              {section.children.map((item) => {
-                return (
-                  <Menu.List.Item>
-                    <Link activeClassName="active" to={item.slug}>
-                      {item.title}
-                    </Link>
-                  </Menu.List.Item>
-                );
-              })}
-            </Menu.List>
-          );
-        })}
-      </Menu>
-    </nav>
+    <Menu>
+      {menu.sections.map((section) => {
+        return (
+          <Menu.List title={section.title}>
+            {section.children.map((item) => {
+              return (
+                <Menu.List.Item>
+                  <Link activeClassName="active" to={item.slug}>
+                    {item.title}
+                  </Link>
+                </Menu.List.Item>
+              );
+            })}
+          </Menu.List>
+        );
+      })}
+    </Menu>
   </nav>
 );
