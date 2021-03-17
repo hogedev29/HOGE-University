@@ -4,9 +4,9 @@ import "./style.scss";
 import Helmet from "./helmet";
 import Header from "./header/header";
 import Midsection from "./midsection";
-import Footer from "./footer";
+import Footer from "./footer/footer";
 import Notification from "./notification";
-import { SideMenu } from "./midsection";
+import { SideMenu } from "./sidebar/sidebar";
 
 class Layout extends Component {
   constructor(props) {
@@ -33,8 +33,8 @@ class Layout extends Component {
             <Notification />
             <Midsection>{this.props.children}</Midsection>
           </main>
+          <Footer />
         </div>
-        <Footer />
       </div>
     );
   }

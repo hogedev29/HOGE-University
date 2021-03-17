@@ -1,0 +1,69 @@
+// Importing variables
+@import "../variables.scss";
+// Importing Bulma from node_modules
+@import "~bulma/bulma.sass";
+// Import mixins
+@import "bulma/sass/utilities/mixins";
+
+.footer {
+  background: #fafafa;
+}
+
+.footer-mobile {
+  display: none;
+  @include mobile {
+    display: block;
+  }
+}
+
+.footer-wide {
+  @include mobile {
+    display: none;
+  }
+
+  .columns {
+    display: flex;
+  }
+
+  .footer-hero {
+    h1 {
+      font-weight: 200;
+      font-size: 3rem;
+    }
+    p {
+      color: #00ba9d;
+      font-weight: 700;
+      font-size: 3rem;
+    }
+  }
+
+  .footer-heading {
+    color: #656262;
+  }
+
+  a:hover {
+    color: $secondary-color;
+  }
+
+  .underline-link a {
+    color: #ead47e;
+    font-weight: 800;
+  }
+
+  .footer-list {
+    li {
+      margin-bottom: 0.8rem;
+    }
+    li a {
+      color: #e4c033;
+      font-weight: 600;
+      letter-spacing: 0.13rem;
+    }
+    a:hover {
+      color: #fff;
+      padding: 0.3rem;
+      font-weight: 700;
+      background-color: #e4c033;
+    }
+  }
+}

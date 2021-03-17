@@ -33,12 +33,13 @@
 }
 
 .mobile-nav-bar {
-  display: none;
+  display: none !important;
 
   @include mobile {
-    display: block;
+    display: block !important;
   }
 }
+
 .wide-nav-bar {
   @include mobile {
     display: none;
@@ -89,7 +90,7 @@
 
 .heroBg {
   display: flex;
-  background: #363636;
+  background: #131212;
 }
 
 .hero-body .subtitle {

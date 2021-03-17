@@ -25,6 +25,7 @@ const MobileNavBar = ({ onShowMenuClick }) => (
           alt="HOGE Universtiy - Learning resources for HOGE community"
         />
       </Navbar.Item>
+      <Navbar.Item>HOGE Universtiy</Navbar.Item>
       <Navbar.Item>
         <Button color="white" onClick={onShowMenuClick} outlined={true}>
           Show Menu
@@ -34,7 +35,7 @@ const MobileNavBar = ({ onShowMenuClick }) => (
     </Navbar.Brand>
     <Navbar.Menu>
       <Navbar.Container>
-        <Navbar.Item href="#">Show menu</Navbar.Item>
+        <Navbar.Item href="#">Buy on BKEX</Navbar.Item>
       </Navbar.Container>
     </Navbar.Menu>
   </Navbar>
