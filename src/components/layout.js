@@ -1,26 +1,43 @@
-import React from "react";
+import React, { Component } from "react";
 
 import "./style.scss";
 import Helmet from "./helmet";
-import Header from "./header";
+import Header from "./header/header";
 import Midsection from "./midsection";
 import Footer from "./footer";
 import Notification from "./notification";
 import { SideMenu } from "./midsection";
 
-const Layout = ({ children }) => (
-  <div>
-    <Helmet />
-    <Header />
-    <div className="root">
-      <SideMenu className={"mobile-side-nav"} />
-      <main className="pt-6">
-        <Notification />
-        <Midsection>{children}</Midsection>
-      </main>
-    </div>
-    <Footer />
-  </div>
-);
+class Layout extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      showMenu: false,
+    };
+  }
+
+  toggleMenu = () => {
+    this.setState((prevState) => ({
+      showMenu: !prevState.showMenu,
+    }));
+  };
+
+  render() {
+    return (
+      <div>
+        <Helmet />
+        <Header onShowMenuClick={this.toggleMenu} />
+        <div className="root">
+          <SideMenu show={this.state.showMenu} className={"mobile-side-nav"} />
+          <main className="pt-6">
+            <Notification />
+            <Midsection>{this.props.children}</Midsection>
+          </main>
+        </div>
+        <Footer />
+      </div>
+    );
+  }
+}
 
 export default Layout;

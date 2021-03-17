@@ -23,24 +23,24 @@ const FooterColumn = ({ title, items }) => (
   </div>
 );
 const Footer = () => (
-  <section className="footer">
+  <footer className="footer">
     <div className="container">
       <div className="footer-hero mb-6">
         <Heading className="center">Explore more of HOGE!</Heading>
         <p className="center">Can't get enough? We understand!</p>
       </div>
 
-      <div class="columns">
+      <div className="columns">
         {footer.sections.map((el) => {
           return (
-            <div class="column has-text-centered">
+            <div className="column has-text-centered">
               <FooterColumn title={el.title} items={el.children} />
             </div>
           );
         })}
       </div>
     </div>
-  </section>
+  </footer>
 );
 
 export default Footer;

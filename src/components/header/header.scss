@@ -1,0 +1,97 @@
+// Importing variables
+@import "../variables.scss";
+// Importing Bulma from node_modules
+@import "~bulma/bulma.sass";
+// Import mixins
+@import "bulma/sass/utilities/mixins";
+
+.top-header {
+  display: flex;
+  justify-content: center;
+
+  .underline-link {
+    padding: 0.4rem;
+    margin-right: 1rem;
+
+    @include mobile {
+      text-align: center;
+    }
+
+    a {
+      @include mobile {
+        font-size: 0.8rem;
+      }
+    }
+  }
+  .underline-link:hover {
+    .line {
+      display: none;
+    }
+    cursor: pointer;
+    background-color: #00ba9d;
+  }
+}
+
+.mobile-nav-bar {
+  display: none;
+
+  @include mobile {
+    display: block;
+  }
+}
+.wide-nav-bar {
+  @include mobile {
+    display: none;
+  }
+}
+
+.header {
+  .banner {
+    .title {
+      color: #ffffff;
+      font-size: 3.5rem;
+    }
+
+    .icon.logo {
+      width: 10rem;
+      height: 10rem;
+    }
+  }
+
+  .exchanges {
+    img {
+      height: 60%;
+      width: 60%;
+    }
+  }
+  .buying-options {
+    justify-content: center;
+    button:hover {
+      color: #ffffff;
+      background: #00ba9d;
+    }
+    button {
+      font-weight: 600;
+      text-transform: uppercase;
+      margin-right: 1.4rem;
+      background: transparent;
+      border-color: #ffffff;
+      color: #ffffff;
+      border-width: 0.15rem;
+
+      @include mobile {
+        margin-top: 1rem;
+        margin-right: 0rem;
+      }
+    }
+  }
+}
+
+.heroBg {
+  display: flex;
+  background: #363636;
+}
+
+.hero-body .subtitle {
+  color: #7a7a7a;
+}

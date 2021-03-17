@@ -5,9 +5,9 @@ import { Link } from "gatsby";
 import { Menu, Button } from "react-bulma-components";
 import menu from "../content/side-menu";
 
-export const SideMenu = ({ className, showMenu }) => (
+export const SideMenu = ({ className, show }) => (
   <nav
-    className={`${className} side-nav-container`}
+    className={`${show ? "side-nav-show" : ""} ${className} side-nav-container`}
     role="navigation"
     aria-label="main navigation"
   >
@@ -33,49 +33,17 @@ export const SideMenu = ({ className, showMenu }) => (
   </nav>
 );
 
-class Midsection extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      showMenu: false,
-    };
-  }
-
-  toggleMenu = () => {
-    this.setState((prevState) => ({
-      showMenu: !prevState.showMenu,
-    }));
-  };
-
-  render() {
-    return (
-      <div className="container">
-        <div className="columns section">
-          <div className="column side-nav-column">
-            <SideMenu
-              className={"full-side-nav"}
-              showMenu={this.state.showMenu}
-            />
-          </div>
-          <div className="column">
-            <div>{this.props.children}</div>
-          </div>
-        </div>
+const Midsection = ({ children }) => (
+  <div className="container">
+    <div className="columns section">
+      <div className="column side-nav-column">
+        <SideMenu className="full-side-nav" />
       </div>
-    );
-  }
-}
+      <div className="column">
+        <div>{children}</div>
+      </div>
+    </div>
+  </div>
+);
 
 export default Midsection;
-/**
- * <div>
-          <Button
-            className="sidebar-btn"
-            color="primary"
-            onClick={this.toggleMenu}
-            rounded={true}
-          >
-            Show sidebar
-          </Button>
-        </div>
- */
