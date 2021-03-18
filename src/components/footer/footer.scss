@@ -34,6 +34,11 @@
       color: #00ba9d;
       font-weight: 700;
       font-size: 3rem;
+
+      @include tablet {
+        text-align: center;
+        font-size: 2rem;
+      }
     }
   }
 

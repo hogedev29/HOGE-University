@@ -29,6 +29,10 @@
     }
     cursor: pointer;
     background-color: #00ba9d;
+
+    a:hover {
+      color: #fff;
+    }
   }
 }
 
@@ -51,11 +55,19 @@
     .title {
       color: #ffffff;
       font-size: 3.5rem;
+
+      @include tablet {
+        font-size: 3rem;
+      }
     }
 
     .icon.logo {
       width: 10rem;
       height: 10rem;
+      @include tablet {
+        width: 8rem;
+        height: 8rem;
+      }
     }
   }
 

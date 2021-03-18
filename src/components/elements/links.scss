@@ -1,0 +1,16 @@
+// Importing variables
+@import "../variables.scss";
+// Importing Bulma from node_modules
+@import "~bulma/bulma.sass";
+
+.links-list {
+  list-style: none;
+}
+
+.links-list > li {
+  min-width: 18.5rem;
+  cursor: pointer;
+  display: inline-block;
+  margin-right: 2rem;
+  margin-bottom: 1rem;
+}

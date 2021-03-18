@@ -1,6 +1,6 @@
 import React from "react";
 
-import "./style.scss";
+import "../style.scss";
 
 const Links = ({ links }) => (
   <ul className="links-list ml-5">

@@ -1,13 +1,16 @@
 // Importing variables
 @import "./variables.scss";
+
 // Importing Bulma from node_modules
 @import "~bulma/bulma.sass";
 @import "./footer/footer.scss";
+@import "./elements/links.scss";
 
 // Import mixins
 @import "bulma/sass/utilities/mixins";
 
 .root {
+  background: #fefefe;
   @include mobile {
     position: relative;
   }
@@ -26,18 +29,6 @@ main {
   align-items: center;
 }
 
-.links-list {
-  list-style: none;
-}
-
-.links-list > li {
-  min-width: 18.5rem;
-  cursor: pointer;
-  display: inline-block;
-  margin-right: 2rem;
-  margin-bottom: 1rem;
-}
-
 .underline-link a {
   color: #ffffff;
   font-weight: 800;
@@ -45,9 +36,4 @@ main {
 
 .underline-link {
   display: inline-block;
-}
-
-.line {
-  height: 3px;
-  background-color: #00ba9d;
 }

@@ -12,7 +12,6 @@ export const UnderlineLink = ({ url, title }) => (
     <a rel="noreferrer" target="_blank" href={url}>
       {title}
     </a>
-    <div className="line" />
   </div>
 );
 

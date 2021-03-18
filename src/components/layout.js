@@ -5,7 +5,7 @@ import Helmet from "./helmet";
 import Header from "./header/header";
 import Midsection from "./midsection";
 import Footer from "./footer/footer";
-import Notification from "./notification";
+import Notification from "./elements/notification";
 import { SideMenu } from "./sidebar/sidebar";
 
 class Layout extends Component {

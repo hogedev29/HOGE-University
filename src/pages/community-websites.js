@@ -1,7 +1,7 @@
 import React from "react";
 import Layout from "../components/layout";
 import content from "../content";
-import Links from "../components/links";
+import Links from "../components/elements/links";
 
 const Websites = () => (
   <Layout>
