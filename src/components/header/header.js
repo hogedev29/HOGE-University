@@ -1,6 +1,6 @@
 import React from "react";
 
-import "./header.scss";
+import "../style.scss";
 import Navbar from "react-bulma-components/lib/components/navbar";
 
 import hogeLogo from "../../images/hoge-logo.png";
@@ -18,23 +18,27 @@ export const UnderlineLink = ({ url, title }) => (
 const MobileNavBar = ({ onShowMenuClick }) => (
   <Navbar className="mobile-nav-bar" color="dark">
     <Navbar.Brand>
-      <Navbar.Item renderAs="a" href="#">
-        <img
-          src={hogeLogo}
-          alt="HOGE Universtiy - Learning resources for HOGE community"
-        />
-      </Navbar.Item>
-      <Navbar.Item>HOGE Universtiy</Navbar.Item>
       <Navbar.Item>
-        <Button color="white" onClick={onShowMenuClick} outlined={true}>
-          Show Menu
+        <Button
+          color="white"
+          size="small"
+          outlined={true}
+          onClick={onShowMenuClick}
+        >
+          Menu
         </Button>
+      </Navbar.Item>
+      <Navbar.Item className="site-title" href="#" renderAs="a">
+        HOGE UNIVERSITY
       </Navbar.Item>
       <Navbar.Burger />
     </Navbar.Brand>
     <Navbar.Menu>
       <Navbar.Container>
         <Navbar.Item href="#">Buy on BKEX</Navbar.Item>
+        <Navbar.Item href="#">Buy on Uniswap</Navbar.Item>
+        <Navbar.Item href="#">Buy on Bilaxy</Navbar.Item>
+        <Navbar.Item href="#">Buy on WhiteBit</Navbar.Item>
       </Navbar.Container>
     </Navbar.Menu>
   </Navbar>
@@ -64,21 +68,22 @@ const WideNavBar = () => (
 
           <div className="center buying-options mb-6">
             <a
+              className="mr-3"
               target="_blank"
               rel="noreferrer"
               href="https://whitebit.com/trade/HOGE_USDT"
             >
-              <button class="button is-rounded">Buy in WhiteBit</button>
+              <button class="button">Buy in WhiteBit</button>
             </a>
-            <a target="_blank" rel="noreferrer" href="">
-              <button class="button is-rounded">Buy in BKEX</button>
+            <a className="mr-3" target="_blank" rel="noreferrer" href="">
+              <button class="button">Buy in BKEX</button>
             </a>
             <a
               target="_blank"
               rel="noreferrer"
               href="https://app.uniswap.org/#/swap?slippage=500&outputCurrency=0xfad45e47083e4607302aa43c65fb3106f1cd7607"
             >
-              <button class="button is-rounded">Buy in UniSwap</button>
+              <button class="button">Buy in UniSwap</button>
             </a>
           </div>
 

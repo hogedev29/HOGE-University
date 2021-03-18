@@ -1,4 +1,26 @@
 // VARIABLES
-$primary-color: #2980b9;
-$secondary-color: #6dd5fa;
+$background-color: #efefef;
+$primary-color: #131212;
+$secondary-color: #00ba9d;
+
+// HERO
+$hero-color: #131212;
+
+// SIDEBAR MENU
 $menu-font-size: 0.85rem;
+
+$shadow: 0 1px 3px rgba(0, 0, 0, 0.08), 0 1px 2px rgba(0, 0, 0, 0.2);
+
+// TYPOGRAPHY
+$family-primary: "Helveticca", sans-serif;
+
+// BOX
+$box-radius: 3px;
+$box-shadow: $shadow;
+
+// BUTTONS
+$button-small-font-weight: 700;
+$button-hover-border-radius: 3px;
+
+// FOOTER
+$footer-background-color: #fafafa;

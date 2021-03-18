@@ -1,7 +1,7 @@
 // Importing variables
 @import "../variables.scss";
-// Importing Bulma from node_modules
 @import "~bulma/bulma.sass";
+
 // Import mixins
 @import "bulma/sass/utilities/mixins";
 
@@ -12,35 +12,42 @@
   .underline-link {
     padding: 0.4rem;
     margin-right: 1rem;
+    border-radius: $button-hover-border-radius;
+
+    -moz-transition: background 0.2s ease-in;
+    -o-transition: background 0.2s ease-in;
+    -webkit-transition: background 0.2s ease-in;
+    transition: background 0.2s ease-in;
 
     @include mobile {
       text-align: center;
     }
 
     a {
+      color: #fff;
       @include mobile {
         font-size: 0.8rem;
       }
     }
   }
-  .underline-link:hover {
-    .line {
-      display: none;
-    }
-    cursor: pointer;
-    background-color: #00ba9d;
 
-    a:hover {
-      color: #fff;
-    }
+  .underline-link:hover {
+    cursor: pointer;
+    color: #fff;
+    background: $secondary-color;
   }
 }
 
 .mobile-nav-bar {
-  display: none !important;
-
   @include mobile {
     display: block !important;
+  }
+
+  display: none !important;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+
+  .site-title {
+    font-weight: 800;
   }
 }
 
@@ -53,7 +60,7 @@
 .header {
   .banner {
     .title {
-      color: #ffffff;
+      color: $white;
       font-size: 3.5rem;
 
       @include tablet {
@@ -79,30 +86,35 @@
   }
   .buying-options {
     justify-content: center;
-    button:hover {
-      color: #ffffff;
-      background: #00ba9d;
-    }
+
     button {
       font-weight: 600;
       text-transform: uppercase;
-      margin-right: 1.4rem;
       background: transparent;
-      border-color: #ffffff;
-      color: #ffffff;
-      border-width: 0.15rem;
-
+      border-color: $white;
+      color: $white;
+      border-width: 0.13rem;
       @include mobile {
         margin-top: 1rem;
         margin-right: 0rem;
       }
+    }
+
+    a {
+      -moz-transition: background 0.2s ease-in;
+      -o-transition: background 0.2s ease-in;
+      -webkit-transition: background 0.2s ease-in;
+      transition: background 0.2s ease-in;
+    }
+    a:hover {
+      background: $secondary-color;
     }
   }
 }
 
 .heroBg {
   display: flex;
-  background: #131212;
+  background: $hero-color;
 }
 
 .hero-body .subtitle {

@@ -3,14 +3,14 @@
 
 // Importing Bulma from node_modules
 @import "~bulma/bulma.sass";
-@import "./footer/footer.scss";
-@import "./elements/links.scss";
-
-// Import mixins
 @import "bulma/sass/utilities/mixins";
 
+@import "./footer/footer.scss";
+@import "./header/header.scss";
+@import "./elements/links.scss";
+
 .root {
-  background: #fefefe;
+  background: $background-color;
   @include mobile {
     position: relative;
   }
@@ -30,10 +30,10 @@ main {
 }
 
 .underline-link a {
-  color: #ffffff;
+  color: $white;
   font-weight: 800;
 }
 
-.underline-link {
-  display: inline-block;
+.button.is-small {
+  font-weight: $button-small-font-weight;
 }

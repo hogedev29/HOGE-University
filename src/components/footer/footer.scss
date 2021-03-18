@@ -6,7 +6,7 @@
 @import "bulma/sass/utilities/mixins";
 
 .footer {
-  background: #fafafa;
+  background: $footer-background-color;
 }
 
 .footer-mobile {
@@ -31,7 +31,7 @@
       font-size: 3rem;
     }
     p {
-      color: #00ba9d;
+      color: $secondary-color;
       font-weight: 700;
       font-size: 3rem;
 
@@ -60,15 +60,21 @@
       margin-bottom: 0.8rem;
     }
     li a {
+      border-radius: $button-hover-border-radius;
+      padding: 0.6rem;
       color: #e4c033;
       font-weight: 600;
       letter-spacing: 0.13rem;
+
+      -moz-transition: background 0.2s ease-in;
+      -o-transition: background 0.2s ease-in;
+      -webkit-transition: background 0.2s ease-in;
+      transition: background 0.2s ease-in;
     }
     a:hover {
       color: #fff;
-      padding: 0.3rem;
       font-weight: 700;
-      background-color: #e4c033;
+      background: #e4c033;
     }
   }
 }
