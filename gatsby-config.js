@@ -22,6 +22,7 @@ module.exports = {
       },
     },
     "gatsby-transformer-sharp",
+    "gatsby-plugin-image",
     "gatsby-plugin-sharp",
     {
       resolve: `gatsby-plugin-manifest`,
@@ -52,6 +53,13 @@ module.exports = {
       options: {
         name: `markdown-pages`,
         path: `${__dirname}/src/markdown-pages`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `images`,
+        path: `${__dirname}/src/images`,
       },
     },
     "gatsby-remark-responsive-iframe",

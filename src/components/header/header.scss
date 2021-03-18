@@ -71,6 +71,23 @@
     .icon.logo {
       width: 10rem;
       height: 10rem;
+
+      :hover {
+        animation: shake 250ms;
+        animation-timing-function: linear;
+      }
+
+      @keyframes shake {
+        0% {
+          transform: rotate(0.5deg);
+        }
+        50% {
+          transform: rotate(-20deg);
+        }
+        100% {
+          transform: rotate(0.5deg);
+        }
+      }
       @include tablet {
         width: 8rem;
         height: 8rem;

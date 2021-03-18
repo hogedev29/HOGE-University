@@ -1,5 +1,5 @@
 import React from "react";
-
+import { StaticImage } from "gatsby-plugin-image";
 import "../style.scss";
 
 const Links = ({ links }) => (
@@ -11,7 +11,12 @@ const Links = ({ links }) => (
             <article className="media center">
               <figure className="media-left">
                 <span className="icon is-large">
-                  <img src={data.image} />
+                  <StaticImage
+                    width="200"
+                    height="200"
+                    src="../../images/hoge-fun.png"
+                    alt="A kitten"
+                  />
                 </span>
               </figure>
               <div className="media-content">

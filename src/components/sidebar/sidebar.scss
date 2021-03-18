@@ -38,7 +38,7 @@
 
 .side-nav {
   min-width: 16rem;
-  background-color: white;
+  background-color: $white;
   border-radius: 0.18rem;
   box-shadow: $shadow;
   color: #4a4a4a;
@@ -56,19 +56,26 @@
     padding: 0.27em 0.4em;
   }
 
+  li {
+    -moz-transition: background 0.2s ease-in;
+    -o-transition: background 0.2s ease-in;
+    -webkit-transition: background 0.2s ease-in;
+    transition: background 0.2s ease-in;
+  }
+
   li:hover {
     a {
       font-weight: 700;
-      color: #ffffff;
-      background-color: #00ba9d;
+      color: $white;
+      background-color: transparent;
     }
-    background-color: #00ba9d;
-    border-radius: 4px;
+    background-color: $secondary-color;
+    border-radius: $button-hover-border-radius;
   }
 
   .active {
     font-weight: 700;
-    background-color: #00ba9d;
-    color: #ffffff;
+    background-color: $secondary-color;
+    color: $white;
   }
 }
