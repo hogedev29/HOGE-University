@@ -1,0 +1,18 @@
+[
+  {
+    "image": {
+      "src": "hoge-report.png"
+    },
+    "title": "HOGE REPORT",
+    "url": "https://www.hoge.report",
+    "subtitle": "Check latests HOGE stats"
+  },
+  {
+    "image": {
+      "src": "hoge-report.png"
+    },
+    "title": "HOGE UNIVERSITY",
+    "url": "https://www.hoge.university",
+    "subtitle": "Learning resources for HOGE coin"
+  }
+]

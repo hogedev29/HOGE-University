@@ -1,6 +1,6 @@
 import React from "react";
 import { Heading } from "react-bulma-components";
-import footer from "../../content/footer";
+import { StaticQuery, graphql } from "gatsby";
 
 const FooterMobile = () => (
   <footer className="footer footer-mobile">
@@ -14,24 +14,41 @@ const FooterMobile = () => (
 );
 
 const FooterWide = () => (
-  <footer className="footer footer-wide">
-    <div className="container">
-      <div className="footer-hero mb-6">
-        <Heading className="center">Explore more of HOGE!</Heading>
-        <p className="center">Can't get enough? We understand!</p>
-      </div>
+  <StaticQuery
+    query={graphql`
+      query footerSections {
+        allFooterJson {
+          nodes {
+            title
+            items {
+              title
+              url
+            }
+          }
+        }
+      }
+    `}
+    render={(data) => (
+      <footer className="footer footer-wide">
+        <div className="container">
+          <div className="footer-hero mb-6">
+            <Heading className="center">Explore more of HOGE!</Heading>
+            <p className="center">Can't get enough? We understand!</p>
+          </div>
 
-      <div className="columns">
-        {footer.sections.map((el) => {
-          return (
-            <div className="column has-text-centered">
-              <FooterColumn title={el.title} items={el.children} />
-            </div>
-          );
-        })}
-      </div>
-    </div>
-  </footer>
+          <div className="columns">
+            {data.allFooterJson.nodes.map((el) => {
+              return (
+                <div className="column has-text-centered">
+                  <FooterColumn title={el.title} items={el.items} />
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </footer>
+    )}
+  />
 );
 
 const FooterColumn = ({ title, items }) => (

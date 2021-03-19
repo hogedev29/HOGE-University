@@ -11,6 +11,19 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
       value,
     });
   }
+
+  console.log("node.internal.type :>> ", node.internal.type);
+  if (
+    node.internal.type === "OfficialWebsitesJson" ||
+    node.internal.type === "CommunityWebsitesJson"
+  ) {
+    // extends the existing gatsby node with a new field, later accessible via the fields graphql node.
+    createNodeField({
+      node, // the current node
+      name: "linkImage", // defines a name for the new element being added.
+      value: `../images/${node.image.src}`, //Injects the value, this will be relative to the path of the json, it will look into /src/images
+    });
+  }
 };
 
 exports.createPages = ({ actions, graphql }) => {

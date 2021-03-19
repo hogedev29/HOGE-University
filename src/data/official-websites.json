@@ -1,0 +1,40 @@
+[
+  {
+    "image": { "src": "hoge-fun.png" },
+    "title": "HOGE FINANCE",
+    "url": "https://www.hoge.finance",
+    "subtitle": "Official HOGE website"
+  },
+  {
+    "image": {
+      "src": "hoge-shop.png"
+    },
+    "title": "HOGE SHOP",
+    "url": "https://www.hogefinance.shop",
+    "subtitle": "Get the latest merch"
+  },
+  {
+    "image": {
+      "src": "hoge-fun.png"
+    },
+    "title": "HOGE FUN",
+    "url": "https://www.hoge.fun",
+    "subtitle": "HOGE games"
+  },
+  {
+    "image": {
+      "src": "hoge-fun.png"
+    },
+    "title": "HOGE MINT",
+    "url": "https://www.hogemint.com",
+    "subtitle": "Mint you assert here!"
+  },
+  {
+    "image": {
+      "src": "hoge-logo.png"
+    },
+    "title": "HOGE DONATE",
+    "url": "https://www.hoge.fun/donate",
+    "subtitle": "Help HOGE team and developers!"
+  }
+]
