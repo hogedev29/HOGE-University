@@ -1,0 +1,29 @@
+// Importing variables
+@import "../variables.scss";
+
+.articles-container {
+  #title {
+    font-size: 4rem;
+  }
+  #subtitle {
+    font-size: 1.25rem;
+  }
+}
+.articles {
+  margin-top: 4rem;
+  .article-container {
+    article {
+      padding-top: 1rem;
+      padding-bottom: 1rem;
+      time {
+        font-weight: 500;
+      }
+      .read-more {
+        display: inline-block;
+        margin-top: 1rem;
+        color: $secondary-color;
+        font-weight: 600;
+      }
+    }
+  }
+}

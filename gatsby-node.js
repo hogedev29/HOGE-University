@@ -5,7 +5,6 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
   const { createNodeField } = actions;
   if (node.internal.type === `Mdx`) {
     const value = createFilePath({ node, getNode });
-    console.log("value :>> ", value);
     createNodeField({
       name: `slug`,
       node,
@@ -26,11 +25,11 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
   }
 };
 
-exports.createPages = ({ actions, graphql }) => {
+exports.createPages = async ({ actions, graphql }) => {
   const { createPage } = actions;
   const template = path.resolve("src/templates/tutorial-template.js");
 
-  return graphql(`
+  const { data } = await graphql(`
     {
       allMdx(sort: { fields: [frontmatter___date], order: DESC }) {
         nodes {
@@ -44,21 +43,83 @@ exports.createPages = ({ actions, graphql }) => {
         }
       }
     }
-  `).then((result) => {
-    if (result.errors) {
-      throw result.errors;
-    }
-    // create page for each mdx file
-    result.data.allMdx.nodes.forEach((page) => {
-      createPage({
-        path: page.frontmatter.slug,
-        component: template,
-        context: {
-          subtitle: page.frontmatter.subtitle,
-          title: page.frontmatter.title,
-          slug: page.frontmatter.slug,
-        },
-      });
+  `);
+
+  if (data.errors) {
+    throw data.errors;
+  }
+  // create page for each mdx file
+  data.allMdx.nodes.forEach((page) => {
+    createPage({
+      path: page.frontmatter.slug,
+      component: template,
+      context: {
+        subtitle: page.frontmatter.subtitle,
+        title: page.frontmatter.title,
+        slug: page.frontmatter.slug,
+      },
     });
   });
+
+  // GRAPH CMS
+
+  const dataCms = await graphql(
+    `
+      {
+        allGraphCmsPost(sort: { fields: date, order: ASC }) {
+          edges {
+            nextPost: next {
+              slug
+              title
+            }
+            page: node {
+              id
+              author {
+                id
+                name
+                title
+              }
+              content {
+                markdown
+              }
+              createdAt
+              excerpt
+              seo {
+                description
+                image {
+                  url
+                }
+                keywords
+                title
+              }
+              slug
+              title
+            }
+            previousPost: previous {
+              slug
+              title
+            }
+          }
+        }
+      }
+    `
+  );
+
+  if (dataCms.errors) throw dataCms.errors;
+
+  dataCms.data.allGraphCmsPost.edges.forEach(
+    ({ nextPost, page, previousPost }) => {
+      console.log("create page for page :>> ", page.title);
+      createPage({
+        component: path.resolve("src/templates/article-template.js"),
+        context: {
+          id: page.id,
+          page,
+          previousPost,
+          nextPost,
+        },
+        path: `/posts/${page.slug}`,
+      });
+    }
+  );
 };

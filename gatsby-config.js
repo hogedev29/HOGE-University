@@ -72,5 +72,14 @@ module.exports = {
       },
     },
     "gatsby-remark-responsive-iframe",
+
+    // GraphCMS
+    {
+      resolve: "gatsby-source-graphcms",
+      options: {
+        endpoint:
+          "https://api-eu-central-1.graphcms.com/v2/ckmhrwhn2h51m01xma4t7fubq/master",
+      },
+    },
   ],
 };

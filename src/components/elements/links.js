@@ -1,7 +1,6 @@
 import React from "react";
-import { StaticImage } from "gatsby-plugin-image";
-import "../style.scss";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
+import "../style.scss";
 
 const Links = ({ links }) => (
   <ul className="links-list ml-5">

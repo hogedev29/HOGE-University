@@ -1,8 +1,8 @@
 import React from "react";
 import { graphql } from "gatsby";
 import Layout from "../components/layout";
-import { MDXRenderer } from "gatsby-plugin-mdx";
 import Midsection from "../components/midsection";
+import { MDXRenderer } from "gatsby-plugin-mdx";
 
 export default function Template({ data }) {
   const { body, frontmatter } = data.mdx;

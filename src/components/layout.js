@@ -41,7 +41,7 @@ class Layout extends Component {
                 School
               </Link>
             </nav>
-            <Notification />
+            {false && <Notification />}
             {this.props.children}
           </main>
           <Footer />
