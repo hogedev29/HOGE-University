@@ -5,6 +5,7 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
   const { createNodeField } = actions;
   if (node.internal.type === `Mdx`) {
     const value = createFilePath({ node, getNode });
+    console.log("value :>> ", value);
     createNodeField({
       name: `slug`,
       node,
@@ -12,7 +13,6 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
     });
   }
 
-  console.log("node.internal.type :>> ", node.internal.type);
   if (
     node.internal.type === "OfficialWebsitesJson" ||
     node.internal.type === "CommunityWebsitesJson"

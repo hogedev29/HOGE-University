@@ -10,8 +10,11 @@
   justify-content: center;
 
   .underline-link {
-    padding: 0.4rem;
-    margin-right: 1rem;
+    padding-bottom: 0.25rem;
+    padding-top: 0.25rem;
+    padding-right: 0.8rem;
+    padding-left: 0.8rem;
+
     border-radius: $button-hover-border-radius;
 
     -moz-transition: background 0.2s ease-in;

@@ -55,11 +55,13 @@ module.exports = {
         path: `${__dirname}/src/data`,
       },
     },
+
+    // Side menu built dinamically from markdown pages in faq folder
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `markdown-pages`,
-        path: `${__dirname}/src/markdown-pages`,
+        name: `markdown-pages-faq`,
+        path: `${__dirname}/src/markdown-pages/faq`,
       },
     },
     {
