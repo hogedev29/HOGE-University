@@ -31,8 +31,9 @@ export const SideMenu = ({ className, show }) => (
           {data.allFile.group.map((group) => {
             const paths = group.nodes[0].absolutePath.split("/");
             const parent = paths[paths.length - 2];
+
             return (
-              <Menu.List title={parent.replaceAll("-", " ")}>
+              <Menu.List title={parent.replace(/-/g, " ")}>
                 {group.nodes.map((node) => {
                   const slices = node.name.split("-").slice(1);
                   const slug = slices.join("-");
