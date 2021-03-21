@@ -1,5 +1,5 @@
 import React from "react";
-import { ArticlePreview } from "./article";
+import ArticlePreview from "./article-preview";
 
 import "./articles-list.scss";
 

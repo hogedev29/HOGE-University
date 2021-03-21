@@ -77,6 +77,8 @@ module.exports = {
     {
       resolve: "gatsby-source-graphcms",
       options: {
+        buildMarkdownNodes: true,
+        downloadLocalImages: true,
         endpoint:
           "https://api-eu-central-1.graphcms.com/v2/ckmhrwhn2h51m01xma4t7fubq/master",
       },

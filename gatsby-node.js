@@ -3,7 +3,12 @@ const path = require(`path`);
 
 exports.onCreateNode = ({ node, actions, getNode }) => {
   const { createNodeField } = actions;
-  if (node.internal.type === `Mdx`) {
+  const parent = getNode(node.parent);
+
+  if (
+    node.internal.type === `Mdx` &&
+    parent.internal.owner === "gatsby-source-filesystem"
+  ) {
     const value = createFilePath({ node, getNode });
     createNodeField({
       name: `slug`,
@@ -31,7 +36,12 @@ exports.createPages = async ({ actions, graphql }) => {
 
   const { data } = await graphql(`
     {
-      allMdx(sort: { fields: [frontmatter___date], order: DESC }) {
+      allMdx(
+        sort: { fields: [frontmatter___date], order: DESC }
+        filter: {
+          parent: { internal: { owner: { eq: "gatsby-source-filesystem" } } }
+        }
+      ) {
         nodes {
           id
           frontmatter {
@@ -82,6 +92,7 @@ exports.createPages = async ({ actions, graphql }) => {
               }
               content {
                 markdown
+                html
               }
               createdAt
               excerpt

@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from "react";
-import { Link, useStaticQuery, graphql } from "gatsby";
+import React, { useState } from "react";
+import { useStaticQuery, graphql } from "gatsby";
 import Layout from "../components/layout";
 import ArticlesList from "../components/articles/articles-list";
 import { Heading, Button } from "react-bulma-components";
