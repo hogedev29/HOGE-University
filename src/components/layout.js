@@ -29,10 +29,10 @@ class Layout extends Component {
         <Header onShowMenuClick={this.toggleMenu} />
         <div className="root">
           <SideMenu show={this.state.showMenu} className={"mobile-side-nav"} />
-          <main className="pt-6">
+          <main className="pt-5">
             <nav className="site-nav center">
               <Link className="mr-4" to={"/articles"}>
-                Articles
+                Home
               </Link>
               <Link className="mr-4" to={"/what-is-hoge"}>
                 Faq

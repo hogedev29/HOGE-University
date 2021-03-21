@@ -39,5 +39,14 @@ main {
 }
 
 .site-nav {
-  margin-bottom: 4rem;
+  margin-bottom: 2rem;
+  a {
+    padding: 0.5rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    font-size: 1.2rem;
+    color: #7b7474;
+    border-radius: 2.4rem;
+    background: #ddd;
+  }
 }

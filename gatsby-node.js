@@ -63,10 +63,11 @@ exports.createPages = async ({ actions, graphql }) => {
 
   // GRAPH CMS
 
+  const limit = 2;
   const dataCms = await graphql(
     `
       {
-        allGraphCmsPost(sort: { fields: date, order: ASC }) {
+        allGraphCmsPost(limit: ${limit}, sort: { fields: date, order: ASC }) {
           edges {
             nextPost: next {
               slug
