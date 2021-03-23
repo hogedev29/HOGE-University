@@ -49,4 +49,13 @@ main {
     border-radius: 2.4rem;
     background: #ddd;
   }
+  a:hover {
+    background: $secondary-color;
+    color: $white;
+  }
+  a.active {
+    background: $secondary-color;
+    color: $white;
+    font-weight: bold;
+  }
 }

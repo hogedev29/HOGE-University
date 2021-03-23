@@ -31,13 +31,17 @@ class Layout extends Component {
           <SideMenu show={this.state.showMenu} className={"mobile-side-nav"} />
           <main className="pt-5">
             <nav className="site-nav center">
-              <Link className="mr-4" to={"/articles"}>
+              <Link activeClassName="active" className="mr-4" to={"/articles"}>
                 Home
               </Link>
-              <Link className="mr-4" to={"/what-is-hoge"}>
+              <Link
+                activeClassName="active"
+                className="mr-4"
+                to={"/what-is-hoge"}
+              >
                 Faq
               </Link>
-              <Link className="mr-4" to={"/school"}>
+              <Link activeClassName="active" className="mr-4" to={"/school"}>
                 School
               </Link>
             </nav>

@@ -4,9 +4,13 @@
 .article-container {
   margin-top: 5rem;
 
-  #article-title {
-    font-size: 2.5rem;
+  .article-header {
     margin-bottom: 6rem;
+
+    .article-title {
+      font-size: 2.5rem;
+      margin-bottom: 2rem;
+    }
   }
   .content {
     white-space: pre-line;
