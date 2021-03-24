@@ -1,7 +1,9 @@
 import React, { useState } from "react";
+import { Router } from "@reach/router";
 import { useStaticQuery, graphql } from "gatsby";
 import Layout from "../components/layout";
 import ArticlesList from "../components/articles/articles-list";
+import Article from "../components/articles/article";
 import { Heading, Button } from "react-bulma-components";
 import postData from "../utils";
 
@@ -87,8 +89,8 @@ const ArticlesPage = () => {
     `
   );
 
-  return (
-    <Layout>
+  const PostsListPage = () => {
+    return (
       <div className="container">
         <div className="columns section">
           <div className="articles-container column">
@@ -110,6 +112,15 @@ const ArticlesPage = () => {
           </div>
         </div>
       </div>
+    );
+  };
+
+  return (
+    <Layout>
+      <Router basepath="/posts">
+        <PostsListPage path="/" />
+        <Article path="/:slug" />
+      </Router>
     </Layout>
   );
 };

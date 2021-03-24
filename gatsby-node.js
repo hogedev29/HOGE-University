@@ -30,10 +30,25 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
   }
 };
 
+exports.onCreatePage = async ({ page, actions }) => {
+  const { createPage } = actions;
+  // page.matchPath is a special key that's used for matching pages
+  // only on the client.
+  if (page.path.match(/^\/posts/)) {
+    page.matchPath = "/posts/*";
+    // Update the page.
+    createPage(page);
+  }
+};
+
 exports.createPages = async ({ actions, graphql }) => {
   const { createPage } = actions;
-  const template = path.resolve("src/templates/tutorial-template.js");
 
+  //////////////////////////////////////////////////////////////////////////////
+  //                                    MDX PAGES
+  //////////////////////////////////////////////////////////////////////////////
+
+  const template = path.resolve("src/templates/tutorial-template.js");
   const { data } = await graphql(`
     {
       allMdx(
@@ -71,8 +86,9 @@ exports.createPages = async ({ actions, graphql }) => {
     });
   });
 
-  // GRAPH CMS
-
+  //////////////////////////////////////////////////////////////////////////////
+  //                                    GRAPH CMS PAGES
+  //////////////////////////////////////////////////////////////////////////////
   const limit = 2;
   const dataCms = await graphql(
     `
@@ -83,8 +99,9 @@ exports.createPages = async ({ actions, graphql }) => {
               slug
               title
             }
-            page: node {
+            post: node {
               id
+              remoteId
               author {
                 id
                 name
@@ -120,17 +137,17 @@ exports.createPages = async ({ actions, graphql }) => {
   if (dataCms.errors) throw dataCms.errors;
 
   dataCms.data.allGraphCmsPost.edges.forEach(
-    ({ nextPost, page, previousPost }) => {
-      console.log("create page for page :>> ", page.title);
+    ({ nextPost, post, previousPost }) => {
       createPage({
-        component: path.resolve("src/templates/article-template.js"),
+        component: path.resolve("src/templates/post-template.js"),
         context: {
-          id: page.id,
-          page,
+          id: post.id,
+          slug: post.slug,
+          post,
           previousPost,
           nextPost,
         },
-        path: `/posts/${page.slug}`,
+        path: `/posts/${post.slug}`,
       });
     }
   );

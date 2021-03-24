@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { useParams } from "@reach/router";
 import { Columns, Box, Container, Heading } from "react-bulma-components";
 import { Link } from "gatsby";
 import postData from "../../utils";
@@ -6,38 +7,43 @@ import postData from "../../utils";
 import "./article.scss";
 
 const Article = ({ data }) => {
-  const page = data.pageContext.page;
-  console.log("page :>> ", page);
-
+  const params = useParams();
   const [post, setPost] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
   const [hasError, setHasError] = useState(false);
+  const [loaded, setLoaded] = useState(false);
 
   useEffect(async () => {
-    if (!post && !isLoading) {
-      console.log("fecth post :>> ");
-      await fetchPost(data.pageContext.id);
+    if (!loaded) {
+      const slug = data?.pageContext ? data.pageContext.post.slug : params.slug;
+      console.log("slug :>> ", slug);
+      await fetchPost(slug);
     }
   });
 
-  const fetchPost = async (id) => {
-    isLoading = true;
+  const fetchPost = async (slug) => {
+    setLoaded(true);
+    setHasError(false);
+    setIsLoading(true);
     try {
-      const result = await postData(createQuery(id));
-      setPost(result.post);
+      const result = await postData(
+        process.env.GRAPH_CMS_ENDPOINT,
+        createQuery(slug)
+      );
+      setPost(result.data.post);
       console.log("post fetched", result);
     } catch (e) {
-      hasError = true;
+      setHasError(true);
       console.log(e);
     }
-    isLoading = false;
+    setIsLoading(false);
   };
 
-  const createQuery = (id) => {
+  const createQuery = (slug) => {
     return {
-      variables: { id },
-      query: `query PostById($id: ID!) {
-        post(id: $id) {
+      variables: { slug },
+      query: `query PostBySlug($slug:String!) {
+        post(where: {slug: $slug}) {
           id
           author {
             id
@@ -66,31 +72,40 @@ const Article = ({ data }) => {
   };
 
   return (
-    <div className="article-container">
-      <Container className="article-header has-text-centered">
-        <div>
-          <Heading className="article-title">{post.title}</Heading>
-        </div>
-        <div>
-          <Heading subtitle id="article-date" size={6}>
-            {post.createdAt}
-          </Heading>
-        </div>
-      </Container>
-      <Columns>
-        <Columns.Column className="side-column has-text-centered" size={3}>
-          <Box>
-            <div>{post.author.name}</div>
-            <div>{post.author.title}</div>
-          </Box>
-        </Columns.Column>
-        <Columns.Column size={1}></Columns.Column>
-        <Columns.Column className="content">
-          <div dangerouslySetInnerHTML={{ __html: post.content.html }}></div>
-        </Columns.Column>
-      </Columns>
+    <div>
+      {isLoading && <div>Loading</div>}
+      {post && renderPost()}
     </div>
   );
+
+  function renderPost() {
+    return (
+      <div className="article-container">
+        <Container className="article-header has-text-centered">
+          <div>
+            <Heading className="article-title">{post.title}</Heading>
+          </div>
+          <div>
+            <Heading subtitle id="article-date" size={6}>
+              {post.createdAt}
+            </Heading>
+          </div>
+        </Container>
+        <Columns>
+          <Columns.Column className="side-column has-text-centered" size={3}>
+            <Box>
+              <div>{post.author.name}</div>
+              <div>{post.author.title}</div>
+            </Box>
+          </Columns.Column>
+          <Columns.Column size={1}></Columns.Column>
+          <Columns.Column className="content">
+            <div dangerouslySetInnerHTML={{ __html: post.content.html }}></div>
+          </Columns.Column>
+        </Columns>
+      </div>
+    );
+  }
 };
 
 export default Article;
