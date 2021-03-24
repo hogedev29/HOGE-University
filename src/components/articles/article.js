@@ -16,7 +16,6 @@ const Article = ({ data }) => {
   useEffect(async () => {
     if (!loaded) {
       const slug = data?.pageContext ? data.pageContext.post.slug : params.slug;
-      console.log("slug :>> ", slug);
       await fetchPost(slug);
     }
   });
@@ -91,18 +90,22 @@ const Article = ({ data }) => {
             </Heading>
           </div>
         </Container>
-        <Columns>
-          <Columns.Column className="side-column has-text-centered" size={3}>
-            <Box>
-              <div>{post.author.name}</div>
-              <div>{post.author.title}</div>
-            </Box>
-          </Columns.Column>
-          <Columns.Column size={1}></Columns.Column>
-          <Columns.Column className="content">
-            <div dangerouslySetInnerHTML={{ __html: post.content.html }}></div>
-          </Columns.Column>
-        </Columns>
+        <Container>
+          <Columns>
+            <Columns.Column className="side-column has-text-centered" size={3}>
+              <Box>
+                <div>{post.author.name}</div>
+                <div>{post.author.title}</div>
+              </Box>
+            </Columns.Column>
+            <Columns.Column size={1}></Columns.Column>
+            <Columns.Column className="content">
+              <div
+                dangerouslySetInnerHTML={{ __html: post.content.html }}
+              ></div>
+            </Columns.Column>
+          </Columns>
+        </Container>
       </div>
     );
   }
