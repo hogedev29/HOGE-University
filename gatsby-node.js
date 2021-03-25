@@ -151,4 +151,65 @@ exports.createPages = async ({ actions, graphql }) => {
       });
     }
   );
+
+  await createCoursePages(createPage, graphql);
 };
+
+//////////////////////////////////////////////////////////////////////////////
+//                            GRAPH COURSE PAGES
+//////////////////////////////////////////////////////////////////////////////
+async function createCoursePages(createPage, graphql) {
+  const dataCms = await graphql(
+    `
+      {
+        allGraphCmsCourse {
+          edges {
+            course: node {
+              title
+              slug
+              modules {
+                title
+                lessons {
+                  id
+                  locale
+                  title
+                  slug
+                  content {
+                    html
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    `
+  );
+
+  if (dataCms.errors) throw dataCms.errors;
+
+  dataCms.data.allGraphCmsCourse.edges.forEach(({ course }) => {
+    // Build courses page
+    createPage({
+      component: path.resolve("src/templates/course-template.js"),
+      context: {
+        course,
+      },
+      path: `/school/${course.slug}`,
+    });
+
+    // Build lessons page
+    for (const module of course.modules) {
+      for (const lesson of module.lessons) {
+        createPage({
+          component: path.resolve("src/templates/course-template.js"),
+          context: {
+            lesson,
+            course,
+          },
+          path: `/school/${course.slug}/${lesson.slug}`,
+        });
+      }
+    }
+  });
+}

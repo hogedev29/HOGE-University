@@ -60,11 +60,53 @@ main {
   }
 }
 
-.courses {
-  div.course {
-    display: inline-block;
-    :hover {
-      cursor: pointer;
+.school {
+  .title {
+    font-size: 4rem;
+  }
+  .subtitle {
+    font-size: 1.25rem;
+  }
+}
+
+.courses-list {
+  ul {
+    list-style-type: none;
+    li {
+      margin-right: 2rem;
+      float: left;
     }
   }
+  .course-item {
+    display: inline-block;
+  }
+}
+
+.course-page {
+  .title {
+    margin-top: 2rem;
+    margin-bottom: 3rem;
+  }
+  .menu-container {
+    text-align: end;
+    background-color: #f7f7f7;
+  }
+}
+
+.course-menu {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  padding-right: 1.5rem;
+  p {
+    color: #7a7a7a;
+    font-size: 0.9em;
+    font-weight: bold;
+    letter-spacing: 0.1em;
+  }
+}
+
+.course-menu li a {
+  padding-right: 0;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
 }

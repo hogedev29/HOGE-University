@@ -1,6 +1,7 @@
 fragment Course on Course {
   stage
   locale
+  slug
   remoteId: id
   createdAt(variation: COMBINED)
   updatedAt(variation: COMBINED)

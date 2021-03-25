@@ -1,5 +1,5 @@
 import React from "react";
-import { graphql, StaticQuery } from "gatsby";
+import { graphql, StaticQuery, Link } from "gatsby";
 import Layout from "../components/layout";
 import { Heading, Container, Section, Box } from "react-bulma-components";
 
@@ -11,6 +11,7 @@ const Courses = ({ className }) => (
           edges {
             node {
               title
+              slug
             }
           }
         }
@@ -18,25 +19,30 @@ const Courses = ({ className }) => (
     `}
     render={(data) => (
       <div className={`${className}`}>
-        {data.allGraphCmsCourse.edges.map(({ node }) => {
-          return (
-            <Box className="course">
-              <div>{node.title}</div>
-            </Box>
-          );
-        })}
+        <ul>
+          {data.allGraphCmsCourse.edges.map(({ node }) => {
+            return (
+              <li>
+                <Box className="course-item">
+                  <div>{node.title}</div>
+                  <Link href={`/school/${node.slug}`}>Start course</Link>
+                </Box>
+              </li>
+            );
+          })}
+        </ul>
       </div>
     )}
   />
 );
 const SchoolPage = () => (
   <Layout>
-    <Container>
-      <Heading>HOGE Crypto School</Heading>
-      <Heading subtitle={true} size={6}>
+    <Container className="school">
+      <Heading className="title">HOGE Crypto School</Heading>
+      <Heading className="subtitle" subtitle={true} size={6}>
         Educate the community about cryptocurrency
       </Heading>
-      <Courses className="mt-6 courses" />
+      <Courses className="mt-6 courses-list" />
     </Container>
   </Layout>
 );

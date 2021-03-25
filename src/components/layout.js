@@ -24,7 +24,7 @@ class Layout extends Component {
 
   render() {
     return (
-      <div>
+      <div className={this.props.className ?? ""}>
         <Helmet />
         <Header onShowMenuClick={this.toggleMenu} />
         <div className="root">

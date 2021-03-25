@@ -5,6 +5,7 @@ fragment Lesson on Lesson {
   createdAt(variation: COMBINED)
   updatedAt(variation: COMBINED)
   publishedAt(variation: COMBINED)
+  slug
   module {
     ... on Module {
       remoteTypeName: __typename
@@ -14,4 +15,7 @@ fragment Lesson on Lesson {
     }
   }
   title
+  content {
+    html
+  }
 }
