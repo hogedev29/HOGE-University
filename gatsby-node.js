@@ -108,7 +108,6 @@ exports.createPages = async ({ actions, graphql }) => {
                 title
               }
               content {
-                markdown
                 html
               }
               createdAt

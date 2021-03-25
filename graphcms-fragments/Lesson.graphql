@@ -16,6 +16,9 @@ fragment Lesson on Lesson {
   }
   title
   content {
-    html
+    ... on RichText {
+      html
+      markdown
+    }
   }
 }

@@ -18,10 +18,8 @@ fragment Post on Post {
   }
   content {
     ... on RichText {
-      raw
-      html
       markdown
-      text
+      html
     }
   }
   tags
