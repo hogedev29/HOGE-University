@@ -77,5 +77,43 @@
         "url": "https://ethplorer.io/address/0xfad45e47083e4607302aa43c65fb3106f1cd7607#chart=candlestick"
       }
     ]
+  },
+  {
+    "title": "Exchanges",
+    "items": [
+      {
+        "title": "Bilaxy",
+        "url": "https://bilaxy.com/trade/HOGE_ETH"
+      },
+      {
+        "title": "WhiteBit",
+        "url": "https://etherscan.io/token/0xfad45e47083e4607302aa43c65fb3106f1cd7607"
+      },
+      {
+        "title": "Bkex",
+        "url": "https://www.bkex.com/trade/HOGE_USDT"
+      },
+      {
+        "title": "Uniswap",
+        "url": "https://app.uniswap.org/#/swap?slippage=500&outputCurrency=0xfad45e47083e4607302aa43c65fb3106f1cd7607"
+      },
+      {
+        "title": "1inch",
+        "url": "https://1inch.exchange/#/ETH/HOGE"
+      }
+    ]
+  },
+  {
+    "title": "Audits",
+    "items": [
+      {
+        "title": "CERTIK",
+        "url": "https://certik.org/projects/hogefinance"
+      },
+      {
+        "title": "Audit Insititue",
+        "url": ""
+      }
+    ]
   }
 ]

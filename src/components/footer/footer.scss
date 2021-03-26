@@ -16,65 +16,64 @@
   }
 }
 
-.footer-wide {
+footer.footer-wide {
+  padding-left: 0;
+  padding-right: 0;
+
   @include mobile {
     display: none;
   }
 
-  .columns {
-    display: flex;
+  .footer-wrapper {
+    border-top: 1px solid #292929;
+    border-bottom: 1px solid #292929;
+    padding: 1rem;
   }
 
   .footer-hero {
-    h1 {
+    h1.title {
       font-weight: 200;
       font-size: 3rem;
+      color: $white;
     }
-    p {
-      color: $secondary-color;
-      font-weight: 700;
-      font-size: 3rem;
+
+    .subtitle {
+      font-size: 1.5rem;
+      color: #8f8f8f;
 
       @include tablet {
         text-align: center;
-        font-size: 2rem;
       }
     }
   }
 
-  .footer-heading {
-    color: #656262;
+  .footer-column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .footer-column-title {
+      color: $white;
+      text-transform: uppercase;
+      font-weight: bold;
+      padding: 0.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .footer-column-list {
+      li {
+        margin-bottom: 0.8rem;
+
+        a {
+          margin: 0.6rem;
+          color: $white;
+          font-weight: 500;
+        }
+      }
+    }
   }
 
-  a:hover {
-    color: $secondary-color;
-  }
-
-  .underline-link a {
-    color: #ead47e;
-    font-weight: 800;
-  }
-
-  .footer-list {
-    li {
-      margin-bottom: 0.8rem;
-    }
-    li a {
-      border-radius: $button-hover-border-radius;
-      padding: 0.6rem;
-      color: #e4c033;
-      font-weight: 600;
-      letter-spacing: 0.13rem;
-
-      -moz-transition: background 0.2s ease-in;
-      -o-transition: background 0.2s ease-in;
-      -webkit-transition: background 0.2s ease-in;
-      transition: background 0.2s ease-in;
-    }
-    a:hover {
-      color: #fff;
-      font-weight: 700;
-      background: #e4c033;
-    }
+  .footer-bottom {
+    color: #8f8f8f;
   }
 }
