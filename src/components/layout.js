@@ -30,21 +30,6 @@ class Layout extends Component {
         <div className="root">
           <SideMenu show={this.state.showMenu} className={"mobile-side-nav"} />
           <main className="pt-5">
-            <nav className="site-nav center">
-              <Link activeClassName="active" className="mr-4" to={"/posts"}>
-                Home
-              </Link>
-              <Link
-                activeClassName="active"
-                className="mr-4"
-                to={"/what-is-hoge"}
-              >
-                Faq
-              </Link>
-              <Link activeClassName="active" className="mr-4" to={"/school"}>
-                School
-              </Link>
-            </nav>
             {false && <Notification />}
             {this.props.children}
           </main>
