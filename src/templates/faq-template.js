@@ -1,15 +1,18 @@
 import React from "react";
 import { graphql } from "gatsby";
 import Layout from "../components/layout";
-import Midsection from "../components/midsection";
 import { MDXRenderer } from "gatsby-plugin-mdx";
+import { SideMenu } from "../components/sidebar/sidebar";
 
 export default function Template({ data }) {
   const { body, frontmatter } = data.mdx;
   return (
     <Layout>
-      <Midsection>
-        <div className="container">
+      <div className="columns">
+        <div className="column side-nav-column">
+          <SideMenu className="full-side-nav" />
+        </div>
+        <div className="column">
           <div className="hero">
             <div className="hero-body">
               <p className="title is-1">{frontmatter.title}</p>
@@ -18,7 +21,7 @@ export default function Template({ data }) {
           </div>
           <MDXRenderer>{body}</MDXRenderer>
         </div>
-      </Midsection>
+      </div>
     </Layout>
   );
 }

@@ -48,7 +48,7 @@ exports.createPages = async ({ actions, graphql }) => {
   //                                    MDX PAGES
   //////////////////////////////////////////////////////////////////////////////
 
-  const template = path.resolve("src/templates/tutorial-template.js");
+  const template = path.resolve("src/templates/faq-template.js");
   const { data } = await graphql(`
     {
       allMdx(

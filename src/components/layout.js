@@ -29,7 +29,7 @@ class Layout extends Component {
         <Header onShowMenuClick={this.toggleMenu} />
         <div className="root">
           <SideMenu show={this.state.showMenu} className={"mobile-side-nav"} />
-          <main className="pt-5">
+          <main>
             {false && <Notification />}
             {this.props.children}
           </main>

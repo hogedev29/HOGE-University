@@ -139,6 +139,8 @@
 }
 
 .wide-nav-bar {
+  background-color: $white;
+
   nav.top-header {
     margin-bottom: 0;
     padding: 12px 106px;
@@ -211,8 +213,8 @@
     align-items: center;
 
     ul {
-      display: inline-flex;
-      padding: 10px 0 10px;
+      display: flex;
+      padding: 10px 0 20px;
     }
 
     li.stats-menu-item {

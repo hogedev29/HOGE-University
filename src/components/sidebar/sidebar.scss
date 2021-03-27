@@ -34,33 +34,26 @@
 }
 .side-nav-column {
   flex-grow: 0.4;
+  padding-top: 0;
 }
 
 .side-nav {
-  min-width: 16rem;
-  background-color: $white;
-  border-radius: 0.18rem;
-  box-shadow: $shadow;
+  background-color: $menu-background-color;
   color: #4a4a4a;
   padding: 1rem;
+  height: 100%;
+  border-right: 1px solid #e0e0e0;
+  text-align: end;
+  padding-top: 4rem;
 
   p {
-    font-size: $menu-font-size;
-    font-weight: 600;
-    letter-spacing: 0;
+    font-size: $menu-font-heading-size;
   }
 
   a {
     font-size: $menu-font-size;
     font-weight: 600;
     padding: 0.27em 0.4em;
-  }
-
-  li {
-    -moz-transition: background 0.2s ease-in;
-    -o-transition: background 0.2s ease-in;
-    -webkit-transition: background 0.2s ease-in;
-    transition: background 0.2s ease-in;
   }
 
   li:hover {
@@ -70,12 +63,10 @@
       background-color: transparent;
     }
     background-color: $secondary-color;
-    border-radius: $button-hover-border-radius;
   }
 
   .active {
     font-weight: 700;
-    background-color: $secondary-color;
-    color: $white;
+    border-right: 3px solid $secondary-color;
   }
 }
