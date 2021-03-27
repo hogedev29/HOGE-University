@@ -23,7 +23,7 @@ export const SideMenu = ({ className, show }) => (
     `}
     render={(data) => (
       <nav
-        className={`${show ? "side-nav-show" : ""} ${className} side-nav`}
+        className={`${show ? "side-nav-show" : ""} ${className}`}
         role="navigation"
         aria-label="main navigation"
       >

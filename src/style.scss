@@ -1,13 +1,12 @@
 // Importing variables
-@import "./variables.scss";
+@import "./components/variables.scss";
 
 // Importing Bulma from node_modules
 @import "~bulma/bulma.sass";
+@import "./components/base.scss";
 @import "bulma/sass/utilities/mixins";
-
-@import "./footer/footer.scss";
-@import "./header/header.scss";
-@import "./elements/links.scss";
+@import "./components/footer/footer.scss";
+@import "./components/header/header.scss";
 
 .root {
   background: $background-color;
@@ -17,6 +16,7 @@
 }
 
 main {
+  min-height: $content-min-height;
   .section {
     padding: 1rem 1.5rem;
   }
@@ -59,67 +59,14 @@ main {
   }
 }
 
-.school {
-  .title {
-    font-size: 4rem;
-  }
-  .subtitle {
-    font-size: 1.25rem;
-  }
-}
-
-.courses-list {
-  ul {
-    list-style-type: none;
-    li {
-      margin-right: 2rem;
-      float: left;
-    }
-  }
-  .course-item {
-    display: inline-block;
-  }
-}
-
-.course-page {
-  .title {
-    margin-top: 2rem;
-    margin-bottom: 3rem;
-  }
-  .menu-container {
-    text-align: end;
-    background-color: #f7f7f7;
-  }
-}
-
-.course-menu {
-  padding-top: 2rem;
-  padding-bottom: 2rem;
-  padding-right: 1.5rem;
-  p {
-    color: #7a7a7a;
-    font-size: 0.9em;
-    font-weight: bold;
-    letter-spacing: 0.1em;
-  }
-}
-
-.course-menu li a {
-  padding-right: 0;
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
-}
-
 //////////////////////////////////////////////////////////////////////////////
 //                            F.A.Q STYLES
 //////////////////////////////////////////////////////////////////////////////
-.faq {
-  .content-container {
-    padding-left: 3rem;
-    padding-right: 3rem;
-    padding-bottom: 7rem;
-    max-width: 1024px;
 
+.faq {
+  min-height: $content-min-height;
+
+  .content-container {
     .content {
       h2 {
         margin-bottom: 2rem;
@@ -156,12 +103,30 @@ main {
 }
 
 //////////////////////////////////////////////////////////////////////////////
-//                            BASE STYLES
+//                            SCHOOL STYLES
 //////////////////////////////////////////////////////////////////////////////
-.btn-hover-underline:hover {
-  border-bottom: 1px solid $black;
+.school {
+  min-height: $content-min-height;
+  padding-top: 3.5rem;
+  padding-bottom: 5rem;
 }
 
-.btn-hover-underline-white:hover {
-  border-bottom: 1px solid $white;
+.courses-list {
+  display: inline-flex;
+  list-style-type: none;
+  li {
+    margin-right: 2rem;
+    float: left;
+    .course-item {
+      display: inline-block;
+    }
+  }
+}
+
+.course-page {
+  min-height: $content-min-height;
+  .title {
+    margin-top: 2rem;
+    margin-bottom: 3rem;
+  }
 }

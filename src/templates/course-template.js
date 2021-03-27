@@ -3,25 +3,30 @@ import Layout from "../components/layout";
 import { Heading, Menu, Columns, Section } from "react-bulma-components";
 import { Link } from "gatsby";
 
-const SideMenu = ({ course }) => {
+const SideMenu = ({ className, course }) => {
   return (
-    <Menu className="course-menu">
-      {course.modules.map((module) => {
-        return (
-          <Menu.List title={module.title}>
-            {module.lessons.map((lesson) => {
-              return (
-                <Menu.List.Item>
-                  <Link href={`/school/${course.slug}/${lesson.slug}`}>
-                    {lesson.title}
-                  </Link>
-                </Menu.List.Item>
-              );
-            })}
-          </Menu.List>
-        );
-      })}
-    </Menu>
+    <nav className={className}>
+      <Menu>
+        {course.modules.map((module) => {
+          return (
+            <Menu.List title={module.title}>
+              {module.lessons.map((lesson) => {
+                return (
+                  <Menu.List.Item>
+                    <Link
+                      activeClassName="active"
+                      href={`/school/${course.slug}/${lesson.slug}`}
+                    >
+                      {lesson.title}
+                    </Link>
+                  </Menu.List.Item>
+                );
+              })}
+            </Menu.List>
+          );
+        })}
+      </Menu>
+    </nav>
   );
 };
 
@@ -44,17 +49,21 @@ export default function CourseTemplate(data) {
   const lesson = data.pageContext.lesson;
   console.log("course :>> ", course);
   return (
-    <Layout className="course-page">
-      <div className="title center">
-        <Heading>{course.title}</Heading>
+    <Layout>
+      <div className="columns course-page mt-0">
+        <div className="column side-nav-column">
+          <SideMenu className="side-nav full-side-nav" course={course} />
+        </div>
+        <div className="column content-container">
+          <div className="hero">
+            <div className="hero-body">
+              <h1 className="page-title">{course.title}</h1>
+              <hr></hr>
+            </div>
+          </div>
+          {lesson && <Lesson lesson={lesson} />}
+        </div>
       </div>
-
-      <Columns>
-        <Columns.Column size={4} className="menu-container">
-          <SideMenu course={course} />
-        </Columns.Column>
-        <Columns.Column>{lesson && <Lesson lesson={lesson} />}</Columns.Column>
-      </Columns>
     </Layout>
   );
 }

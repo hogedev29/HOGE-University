@@ -1,20 +1,9 @@
 import React from "react";
-
-import "../style.scss";
 import Navbar from "react-bulma-components/lib/components/navbar";
-
 import hogeLogo from "../../images/hoge-logo.png";
 import header from "../../content/header";
 import { Button, Heading, Level } from "react-bulma-components";
 import { Link } from "gatsby";
-
-export const UnderlineLink = ({ url, title }) => (
-  <div className="underline-link">
-    <a rel="noreferrer" target="_blank" href={url}>
-      {title}
-    </a>
-  </div>
-);
 
 const MobileNavBar = ({ onShowMenuClick }) => (
   <Navbar className="mobile-nav-bar" color="dark">

@@ -8,9 +8,9 @@ export default function Template({ data }) {
   const { body, frontmatter } = data.mdx;
   return (
     <Layout>
-      <div className="columns faq">
+      <div className="columns faq mt-0">
         <div className="column side-nav-column">
-          <SideMenu className="full-side-nav" />
+          <SideMenu className="side-nav full-side-nav" />
         </div>
         <div className="column content-container">
           <div className="hero">

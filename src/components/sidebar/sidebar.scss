@@ -47,13 +47,14 @@
   padding-top: 4rem;
 
   p {
+    color: $menu-heading-color;
     font-size: $menu-font-heading-size;
   }
 
   a {
     font-size: $menu-font-size;
     font-weight: 600;
-    color: #222222;
+    color: $menu-label-color;
     padding: 0.27em 0.4em;
     text-transform: uppercase;
   }

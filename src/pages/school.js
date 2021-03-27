@@ -18,30 +18,28 @@ const Courses = ({ className }) => (
       }
     `}
     render={(data) => (
-      <div className={`${className}`}>
-        <ul>
-          {data.allGraphCmsCourse.edges.map(({ node }) => {
-            return (
-              <li>
-                <Box className="course-item">
-                  <div>{node.title}</div>
-                  <Link href={`/school/${node.slug}`}>Start course</Link>
-                </Box>
-              </li>
-            );
-          })}
-        </ul>
-      </div>
+      <ul className={`${className}`}>
+        {data.allGraphCmsCourse.edges.map(({ node }) => {
+          return (
+            <li>
+              <Box className="course-item">
+                <div>{node.title}</div>
+                <Link href={`/school/${node.slug}`}>Start course</Link>
+              </Box>
+            </li>
+          );
+        })}
+      </ul>
     )}
   />
 );
 const SchoolPage = () => (
   <Layout>
     <Container className="school">
-      <Heading className="title">HOGE Crypto School</Heading>
-      <Heading className="subtitle" subtitle={true} size={6}>
+      <h1 className="page-title">HOGE Crypto School</h1>
+      <h1 className="page-subtitle">
         Educate the community about cryptocurrency
-      </Heading>
+      </h1>
       <Courses className="mt-6 courses-list" />
     </Container>
   </Layout>

@@ -92,7 +92,7 @@ const ArticlesPage = () => {
   const PostsListPage = () => {
     return (
       <div className="container">
-        <div className="columns section">
+        <div className="columns section mt-0">
           <div className="articles-container column">
             <Heading id="title">Latest</Heading>
             <Heading id="subtitle" size={6} subtitle>
