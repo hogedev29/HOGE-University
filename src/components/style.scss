@@ -111,6 +111,51 @@ main {
 }
 
 //////////////////////////////////////////////////////////////////////////////
+//                            F.A.Q STYLES
+//////////////////////////////////////////////////////////////////////////////
+.faq {
+  .content-container {
+    padding-left: 3rem;
+    padding-right: 3rem;
+    padding-bottom: 7rem;
+    max-width: 1024px;
+
+    .content {
+      h2 {
+        margin-bottom: 2rem;
+      }
+
+      blockquote {
+        margin-bottom: 3rem;
+        margin-top: 3rem;
+        margin-left: -2rem;
+        margin-right: -2rem;
+        border-left: 7px solid $secondary-color;
+        background: #1a8bcc57;
+        padding: 1.3em 1.7em;
+
+        p {
+          font-weight: bold;
+        }
+      }
+
+      p {
+        // text-align: justify;
+        font-size: $faq-font-size;
+        line-height: $faq-line-height;
+      }
+    }
+  }
+
+  .hero {
+    .subtitle {
+      font-weight: 100;
+      margin-bottom: 3rem;
+    }
+  }
+}
+
+//////////////////////////////////////////////////////////////////////////////
 //                            BASE STYLES
 //////////////////////////////////////////////////////////////////////////////
 .btn-hover-underline:hover {
