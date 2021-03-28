@@ -1,7 +1,17 @@
 import React from "react";
 import Layout from "../components/layout";
-import { Heading, Menu, Columns, Section } from "react-bulma-components";
+import { Menu, Section } from "react-bulma-components";
 import { Link } from "gatsby";
+
+const setActive = ({ location: { pathname } }, target) => {
+  const paths = pathname.split("/");
+  const lastPath = paths[paths.length - 1];
+  if (lastPath === target) {
+    return {
+      className: "active",
+    };
+  }
+};
 
 const SideMenu = ({ className, course }) => {
   return (
@@ -14,8 +24,8 @@ const SideMenu = ({ className, course }) => {
                 return (
                   <Menu.List.Item>
                     <Link
-                      activeClassName="active"
-                      href={`/school/${course.slug}/${lesson.slug}`}
+                      getProps={(props) => setActive(props, lesson.slug)}
+                      to={`/school/${course.slug}/${lesson.slug}`}
                     >
                       {lesson.title}
                     </Link>

@@ -5,6 +5,14 @@ import header from "../../content/header";
 import { Button, Heading, Level } from "react-bulma-components";
 import { Link } from "gatsby";
 
+const setActive = ({ location: { pathname } }, target) => {
+  if (pathname.includes(target)) {
+    return {
+      className: "top-menu-btn-active",
+    };
+  }
+};
+
 const MobileNavBar = ({ onShowMenuClick }) => (
   <Navbar className="mobile-nav-bar" color="dark">
     <Navbar.Brand>
@@ -34,69 +42,6 @@ const MobileNavBar = ({ onShowMenuClick }) => (
   </Navbar>
 );
 
-/*
-const WideNavBar = () => (
-  <div className="wide-nav-bar">
-    <section className="hero heroBg is-small">
-      <div className="hero-body">
-        <div className="top-header mb-6">
-          <div className="center">
-            <UnderlineLink url="https://hoge.finance" title="HOGE WEBSITE" />
-            <UnderlineLink url="https://hogefinance.shop" title="HOGE SHOP" />
-            <UnderlineLink url="https://hoge.fun" title="HOGE FUN" />
-            <UnderlineLink url="https://hogemint.com" title="HOGE MINT" />
-            <UnderlineLink url="https://hoge.fun/donate" title="HOGE DONATE" />
-          </div>
-        </div>
-
-        <div className="header container">
-          <div className="banner center mb-6">
-            <figure className="icon logo media-left">
-              <img src={hogeLogo} alt="hoge-logo" />
-            </figure>
-            <h1 className="title">HOGE.University</h1>
-          </div>
-
-          <div className="center buying-options mb-6">
-            <a
-              className="mr-3"
-              target="_blank"
-              rel="noreferrer"
-              href="https://whitebit.com/trade/HOGE_USDT"
-            >
-              <button class="button">Buy in WhiteBit</button>
-            </a>
-            <a className="mr-3" target="_blank" rel="noreferrer" href="">
-              <button class="button">Buy in BKEX</button>
-            </a>
-            <a
-              target="_blank"
-              rel="noreferrer"
-              href="https://app.uniswap.org/#/swap?slippage=500&outputCurrency=0xfad45e47083e4607302aa43c65fb3106f1cd7607"
-            >
-              <button class="button">Buy in UniSwap</button>
-            </a>
-          </div>
-
-          <div className="exchanges has-text-centered center columns">
-            <div className="column" />
-            {header.exchanges.map((el) => {
-              return (
-                <div className="column">
-                  <a rel="noreferrer" target="_blank" href={el.url}>
-                    <img src={el.image}></img>
-                  </a>
-                </div>
-              );
-            })}
-            <div className="column" />
-          </div>
-        </div>
-      </div>
-    </section>
-  </div>
-);*/
-
 const WideNavBar = () => (
   <header className="wide-nav-bar">
     <Level className="top-header" renderAs="nav">
@@ -117,22 +62,28 @@ const WideNavBar = () => (
     <nav className="main-menu">
       <ul>
         <li className="main-menu-item">
-          <Link activeClassName="top-menu-btn-active" to={"/posts"}>
+          <Link getProps={(props) => setActive(props, "/posts")} to={"/posts"}>
             Home
           </Link>
         </li>
         <li className="main-menu-item">
-          <Link activeClassName="top-menu-btn-active" to={"/what-is-hoge"}>
+          <Link
+            getProps={(props) => setActive(props, "/what-is-hoge")}
+            to={"/what-is-hoge"}
+          >
             F.A.Q
           </Link>
         </li>
         <li className="main-menu-item">
-          <Link activeClassName="top-menu-btn-active" to={"/school"}>
+          <Link
+            getProps={(props) => setActive(props, "/school")}
+            to={"/school"}
+          >
             Crypto School
           </Link>
         </li>
         <li className="main-menu-item">
-          <Link activeClassName="top-menu-btn-active" to={"/about"}>
+          <Link getProps={(props) => setActive(props, "/about")} to={"/about"}>
             About
           </Link>
         </li>
