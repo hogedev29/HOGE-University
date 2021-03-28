@@ -34,9 +34,6 @@ const Lesson = ({ lesson }) => {
   return (
     <div>
       <Section>
-        <Heading>{lesson.title}</Heading>
-      </Section>
-      <Section>
         <div dangerouslySetInnerHTML={{ __html: lesson.content.html }}></div>
       </Section>
     </div>
@@ -50,6 +47,7 @@ export default function CourseTemplate(data) {
   console.log("course :>> ", course);
   return (
     <Layout>
+      <div className="course-title center">{course.title}</div>
       <div className="columns course-page mt-0">
         <div className="column side-nav-column">
           <SideMenu className="side-nav full-side-nav" course={course} />
@@ -57,7 +55,7 @@ export default function CourseTemplate(data) {
         <div className="column content-container">
           <div className="hero">
             <div className="hero-body">
-              <h1 className="page-title">{course.title}</h1>
+              <h1 className="page-title">{lesson && lesson.title}</h1>
               <hr></hr>
             </div>
           </div>

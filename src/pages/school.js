@@ -12,6 +12,11 @@ const Courses = ({ className }) => (
             node {
               title
               slug
+              modules {
+                lessons {
+                  slug
+                }
+              }
             }
           }
         }
@@ -20,11 +25,18 @@ const Courses = ({ className }) => (
     render={(data) => (
       <ul className={`${className}`}>
         {data.allGraphCmsCourse.edges.map(({ node }) => {
+          let lessonSlug = "";
+          if (node.modules.length > 0) {
+            lessonSlug = node.modules[0].lessons[0].slug;
+          }
+
           return (
             <li>
               <Box className="course-item">
                 <div>{node.title}</div>
-                <Link href={`/school/${node.slug}`}>Start course</Link>
+                <Link href={`/school/${node.slug}/${lessonSlug}`}>
+                  Start course
+                </Link>
               </Box>
             </li>
           );

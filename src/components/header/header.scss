@@ -204,6 +204,10 @@
         border-bottom: 3px solid $white;
       }
     }
+
+    li.main-menu-item:last-child {
+      margin: 0;
+    }
   }
 
   .stats {
@@ -225,6 +229,10 @@
         font-size: 0.7rem;
         color: $white;
       }
+    }
+
+    li.stats-menu-item:last-child {
+      margin: 0;
     }
   }
 }
