@@ -8,8 +8,8 @@ const ArticlePreview = ({ article }) => (
       <article>
         <div>
           <Columns>
-            <Columns.Column className="center" size={3}>
-              <div className="center">
+            <Columns.Column size={3}>
+              <div className="center-vertically">
                 <time>{article.createdAt}</time>
               </div>
             </Columns.Column>
@@ -21,7 +21,7 @@ const ArticlePreview = ({ article }) => (
               <p className="excerpt">{article.excerpt}</p>
               <div>
                 <Link
-                  className="read-more"
+                  className="read-more btn-hover-underline-accent"
                   to={`/posts/${article.slug}`}
                   aria-label={`Read "${article.title}"`}
                 >

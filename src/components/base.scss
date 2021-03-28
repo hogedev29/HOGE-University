@@ -6,6 +6,10 @@
   border-bottom: 1px solid $white;
 }
 
+.btn-hover-underline-accent:hover {
+  border-bottom: 2px solid $secondary-color;
+}
+
 .page-title {
   color: #363636;
   font-weight: 600;
@@ -38,4 +42,12 @@ div.content-container {
   border-radius: 6px !important;
   border-width: 1px;
   box-shadow: 0 0 0 0 !important;
+}
+
+.center-vertically {
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
 }
