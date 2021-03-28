@@ -16,7 +16,7 @@
 .page-subtitle {
   font-size: 1.5rem;
   font-weight: 100;
-  color: #bbbbbb;
+  color: #929292;
   line-height: 1.25;
 }
 
@@ -27,8 +27,15 @@
 // Gatsby overrides local css and i can't figure out why. Set a more specific css
 // selector to workaround the issue.
 div.content-container {
-  padding-left: 3rem;
-  padding-right: 3rem;
+  padding-left: 6rem;
   padding-bottom: 7rem;
   max-width: 1024px;
+}
+
+.box {
+  border-style: solid;
+  border-color: #eae7e4;
+  border-radius: 6px !important;
+  border-width: 1px;
+  box-shadow: 0 0 0 0 !important;
 }

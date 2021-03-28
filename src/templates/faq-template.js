@@ -15,8 +15,8 @@ export default function Template({ data }) {
         <div className="column content-container">
           <div className="hero">
             <div className="hero-body">
-              <p className="title is-1">{frontmatter.title}</p>
-              <p className="subtitle is-4">{frontmatter.subtitle}</p>
+              <p className="page-title">{frontmatter.title}</p>
+              <p className="page-subtitle">{frontmatter.subtitle}</p>
               <hr></hr>
             </div>
           </div>

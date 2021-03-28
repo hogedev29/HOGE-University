@@ -94,10 +94,10 @@ const ArticlesPage = () => {
       <div className="container">
         <div className="columns section mt-0">
           <div className="articles-container column">
-            <Heading id="title">Latest</Heading>
-            <Heading id="subtitle" size={6} subtitle>
+            <h1 className="page-title">Latest</h1>
+            <h1 className="page-subtitle">
               Latest articles from HOGE community
-            </Heading>
+            </h1>
             <ArticlesList posts={data.allGraphCmsPost.nodes.concat(posts)} />
             <div className="center">
               <Button
