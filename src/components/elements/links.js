@@ -15,10 +15,15 @@ const Links = ({ classname, links }) => (
               </figure>
               <div className="media-content">
                 <div className="content">
-                  <a target="_blank" rel="noreferrer" href={node.url}>
+                  <a
+                    className="link"
+                    target="_blank"
+                    rel="noreferrer"
+                    href={node.url}
+                  >
                     {node.title}
                   </a>
-                  <p className="subtitle is-size-5">{node.subtitle}</p>
+                  <p>{node.subtitle}</p>
                 </div>
               </div>
             </article>

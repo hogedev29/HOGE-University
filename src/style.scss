@@ -185,6 +185,13 @@ main {
       width: 60%;
       margin-bottom: 1rem;
       display: inline-block;
+
+      p {
+        color: $subtitle-color;
+      }
+      a {
+        color: $title-color;
+      }
     }
   }
 }
