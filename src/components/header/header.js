@@ -90,6 +90,14 @@ const WideNavBar = () => (
           </Link>
         </li>
         <li className="main-menu-item">
+          <Link
+            getProps={(props) => setActive(props, "/initiatives")}
+            to={"/initiatives"}
+          >
+            Initiatives
+          </Link>
+        </li>
+        <li className="main-menu-item">
           <Link getProps={(props) => setActive(props, "/about")} to={"/about"}>
             About
           </Link>

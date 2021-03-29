@@ -99,7 +99,7 @@ const ArticlesPage = () => {
     `
   );
 
-  const PostsListPage = () => {
+  const PostsListTile = () => {
     return (
       <div className="articles-container">
         <h1 className="tile-title">Latest</h1>
@@ -146,42 +146,38 @@ const ArticlesPage = () => {
     </div>
   );
 
+  const InitiativesTile = () => (
+    <div className="initiaves-container">
+      <div>
+        <h1 className="tile-title">Community initiaves</h1>
+        <Link
+          className="see-more-btn btn-hover-underline-accent"
+          to={`/initiatives`}
+          aria-label={`See more`}
+        >
+          See more &rarr;
+        </Link>
+      </div>
+
+      <h1 className="tile-subtitle">Join one of HOGE community initiatives</h1>
+      <Initiatives className="initiatives" />
+    </div>
+  );
+
   const HomePage = () => {
     return (
       <div className="home container">
-        <Section>
-          <Columns>
-            <Columns.Column>
-              <Columns.Column className="videos-tile">
-                <VideosTile videos={data.allVideosJson.nodes} />
-              </Columns.Column>
-              <Columns>
-                <Columns.Column size={5}>
-                  <PostsListPage />
-                </Columns.Column>
-                <Columns.Column>
-                  <div className="initiaves-container">
-                    <div>
-                      <h1 className="tile-title">Commnunity initiaves</h1>
-                      <Link
-                        className="see-more-btn btn-hover-underline-accent"
-                        to={`/initiatives`}
-                        aria-label={`See more`}
-                      >
-                        See more &rarr;
-                      </Link>
-                    </div>
-
-                    <h1 className="tile-subtitle">
-                      Join one of HOGE community initiatives
-                    </h1>
-                    <Initiatives className="initiatives" />
-                  </div>
-                </Columns.Column>
-              </Columns>
-            </Columns.Column>
-          </Columns>
-        </Section>
+        <div className="videos-tile">
+          <VideosTile videos={data.allVideosJson.nodes} />
+        </div>
+        <div className="columns">
+          <div className="column">
+            <PostsListTile />
+          </div>
+          <div className="column is-narrow">
+            <InitiativesTile />
+          </div>
+        </div>
       </div>
     );
   };
