@@ -1,5 +1,4 @@
 import React from "react";
-import Layout from "../components/layout";
 import Links from "../components/elements/links";
 import { StaticQuery, graphql } from "gatsby";
 
@@ -26,20 +25,7 @@ const Websites = () => (
         }
       }
     `}
-    render={(links) => (
-      <Layout>
-        <section className="hero">
-          <div className="hero-body">
-            <p className="title is-1">Offical websites</p>
-            <p className="subtitle is-4">List of official websites</p>
-          </div>
-        </section>
-
-        <section>
-          <Links links={links.allOfficialWebsitesJson.edges} />
-        </section>
-      </Layout>
-    )}
+    render={(links) => <Links links={links.allOfficialWebsitesJson.edges} />}
   />
 );
 

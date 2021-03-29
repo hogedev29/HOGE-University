@@ -4,8 +4,10 @@ import { useStaticQuery, graphql } from "gatsby";
 import Layout from "../components/layout";
 import ArticlesList from "../components/articles/articles-list";
 import Article from "../components/articles/article";
-import { Heading, Button } from "react-bulma-components";
+import { Columns, Section, Button } from "react-bulma-components";
 import postData from "../utils";
+import Video from "../components/elements/video";
+import Initiatives from "../components/elements/initiatives";
 
 const ArticlesPage = () => {
   const [skip, setSkip] = useState(2);
@@ -85,40 +87,90 @@ const ArticlesPage = () => {
             title
           }
         }
+
+        allVideosJson {
+          nodes {
+            title
+            url
+            description
+          }
+        }
       }
     `
   );
 
   const PostsListPage = () => {
     return (
-      <div className="container">
-        <div className="columns section mt-0">
-          <div className="articles-container column">
-            <h1 className="page-title">Latest</h1>
-            <h1 className="page-subtitle">
-              Latest articles from HOGE community
-            </h1>
-            <ArticlesList posts={data.allGraphCmsPost.nodes.concat(posts)} />
-            <div className="center">
-              <Button
-                loading={isLoading}
-                isStatic={isLoading}
-                invisible={!hasMoreData}
-                onClick={() => loadMorePosts(skip)}
-              >
-                Load more
-              </Button>
-            </div>
-          </div>
+      <div className="articles-container">
+        <h1 className="tile-title">Latest</h1>
+        <h1 className="tile-subtitle">Latest articles from HOGE community</h1>
+        <ArticlesList posts={data.allGraphCmsPost.nodes.concat(posts)} />
+        <div className="center">
+          <Button
+            loading={isLoading}
+            isStatic={isLoading}
+            invisible={!hasMoreData}
+            onClick={() => loadMorePosts(skip)}
+          >
+            Load more
+          </Button>
         </div>
+      </div>
+    );
+  };
+
+  const VideosTile = ({ videos }) => (
+    <div>
+      <h1 className="tile-title">Videos</h1>
+      <h1 className="tile-subtitle">Latest articles from HOGE community</h1>
+      <div>
+        <ul className="videos-list">
+          {videos.map((video) => {
+            return (
+              <li>
+                <Video className="video" src={video.url} />
+              </li>
+            );
+          })}
+        </ul>
+      </div>
+    </div>
+  );
+
+  const HomePage = () => {
+    return (
+      <div className="container">
+        <Section>
+          <Columns>
+            <Columns.Column>
+              <Columns.Column className="videos-tile">
+                <VideosTile videos={data.allVideosJson.nodes} />
+              </Columns.Column>
+              <Columns>
+                <Columns.Column size={5}>
+                  <PostsListPage />
+                </Columns.Column>
+                <Columns.Column>
+                  <div className="initiaves-container">
+                    <h1 className="tile-title">Commnunity initiaves</h1>
+                    <h1 className="tile-subtitle">
+                      Join one of HOGE community initiatives
+                    </h1>
+                    <Initiatives className="initiatives" />
+                  </div>
+                </Columns.Column>
+              </Columns>
+            </Columns.Column>
+          </Columns>
+        </Section>
       </div>
     );
   };
 
   return (
     <Layout>
-      <Router basepath="/posts">
-        <PostsListPage path="/" />
+      <Router basepath="/home">
+        <HomePage path="/" />
         <Article path="/:slug" />
       </Router>
     </Layout>

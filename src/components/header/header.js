@@ -1,7 +1,6 @@
 import React from "react";
 import Navbar from "react-bulma-components/lib/components/navbar";
 import hogeLogo from "../../images/hoge-logo.png";
-import header from "../../content/header";
 import { Button, Heading, Level } from "react-bulma-components";
 import { Link } from "gatsby";
 
@@ -62,7 +61,7 @@ const WideNavBar = () => (
     <nav className="main-menu">
       <ul>
         <li className="main-menu-item">
-          <Link getProps={(props) => setActive(props, "/posts")} to={"/posts"}>
+          <Link getProps={(props) => setActive(props, "/home")} to={"/home"}>
             Home
           </Link>
         </li>

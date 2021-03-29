@@ -1,16 +1,8 @@
 // Importing variables
 @import "../variables.scss";
 
-.articles-container {
-  #title {
-    font-size: 4rem;
-  }
-  #subtitle {
-    font-size: 1.25rem;
-  }
-}
 .articles {
-  margin-top: 4rem;
+  margin-top: 1.7rem;
   .article-row {
     article {
       padding-top: 1rem;

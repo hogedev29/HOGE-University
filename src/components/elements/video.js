@@ -1,10 +1,10 @@
 import React from "react";
 
-const Video = ({ src }) => (
-  <div className="video">
+const Video = ({ className, src, height, width }) => (
+  <div className={`${className}`}>
     <iframe
-      width="560"
-      height="315"
+      width={width}
+      height={height}
       src={src}
       frameborder="0"
       allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"

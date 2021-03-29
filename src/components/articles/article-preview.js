@@ -1,35 +1,26 @@
 import React from "react";
-import { Columns, Box, Heading } from "react-bulma-components";
+import { Box, Heading } from "react-bulma-components";
 import { Link } from "gatsby";
+import "./article-preview.scss";
 
 const ArticlePreview = ({ article }) => (
   <li>
     <Box className="mb-4 article-row">
       <article>
-        <div>
-          <Columns>
-            <Columns.Column size={3}>
-              <div className="center-vertically">
-                <time>{article.createdAt}</time>
-              </div>
-            </Columns.Column>
-            <Columns.Column>
-              <Heading>{article.author.title}</Heading>
-              <Heading subtitle size={6}>
-                {article.author.name}
-              </Heading>
-              <p className="excerpt">{article.excerpt}</p>
-              <div>
-                <Link
-                  className="read-more btn-hover-underline-accent"
-                  to={`/posts/${article.slug}`}
-                  aria-label={`Read "${article.title}"`}
-                >
-                  Read more &rarr;
-                </Link>
-              </div>
-            </Columns.Column>
-          </Columns>
+        <Heading className="article-title">{article.author.title}</Heading>
+        <div className="subheading">
+          <span className="article-author">{article.author.name}</span>
+          <time className="article-time">{article.createdAt}</time>
+        </div>
+        <p className="article-excerpt">{article.excerpt}</p>
+        <div className="read-more-container">
+          <Link
+            className="read-more btn-hover-underline-accent"
+            to={`/posts/${article.slug}`}
+            aria-label={`Read "${article.title}"`}
+          >
+            Read more &rarr;
+          </Link>
         </div>
       </article>
     </Box>

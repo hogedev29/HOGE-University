@@ -139,3 +139,37 @@ main {
   font-weight: 200;
   border-bottom: 1px solid #dedededd;
 }
+
+//////////////////////////////////////////////////////////////////////////////
+//                            HOME STYLES
+//////////////////////////////////////////////////////////////////////////////
+
+.videos-tile {
+  margin-bottom: 3rem;
+}
+
+.tile-title {
+  color: #363636;
+  font-size: 1.7rem;
+  font-weight: bold;
+}
+
+.tile-subtitle {
+  font-weight: 100;
+  color: $subtitle-color;
+}
+
+.videos-list {
+  display: flex;
+  margin-top: 2.5rem;
+
+  li {
+    margin-right: 2rem;
+  }
+}
+
+.initiaves-container {
+  .initiatives {
+    margin-top: 1.7rem;
+  }
+}

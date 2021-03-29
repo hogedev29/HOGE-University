@@ -1,2 +1,27 @@
-// Importing variables
 @import "../variables.scss";
+
+div.article-row {
+  padding: 0.5rem 2rem;
+
+  .article-title {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .subheading {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+
+    .article-time {
+      color: $subtitle-color;
+    }
+    .article-author {
+      color: $subtitle-color;
+    }
+  }
+
+  .read-more-container {
+    text-align: end;
+  }
+}

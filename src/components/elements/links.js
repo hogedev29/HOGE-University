@@ -1,8 +1,8 @@
 import React from "react";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 
-const Links = ({ links }) => (
-  <ul className="links-list ml-5">
+const Links = ({ classname, links }) => (
+  <ul className={`${classname} links-list `}>
     {links.map(({ node }) => {
       return (
         <li>
