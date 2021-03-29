@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Router } from "@reach/router";
-import { useStaticQuery, graphql } from "gatsby";
+import { useStaticQuery, Link, graphql } from "gatsby";
 import Layout from "../components/layout";
 import ArticlesList from "../components/articles/articles-list";
 import Article from "../components/articles/article";
@@ -88,7 +88,7 @@ const ArticlesPage = () => {
           }
         }
 
-        allVideosJson {
+        allVideosJson(limit: 3) {
           nodes {
             title
             url
@@ -121,7 +121,16 @@ const ArticlesPage = () => {
 
   const VideosTile = ({ videos }) => (
     <div>
-      <h1 className="tile-title">Videos</h1>
+      <div>
+        <h1 className="tile-title">Videos</h1>
+        <Link
+          className="see-more-btn btn-hover-underline-accent"
+          to={`/videos`}
+          aria-label={`See more`}
+        >
+          See more &rarr;
+        </Link>
+      </div>
       <h1 className="tile-subtitle">Latest articles from HOGE community</h1>
       <div>
         <ul className="videos-list">
@@ -139,7 +148,7 @@ const ArticlesPage = () => {
 
   const HomePage = () => {
     return (
-      <div className="container">
+      <div className="home container">
         <Section>
           <Columns>
             <Columns.Column>
@@ -152,7 +161,17 @@ const ArticlesPage = () => {
                 </Columns.Column>
                 <Columns.Column>
                   <div className="initiaves-container">
-                    <h1 className="tile-title">Commnunity initiaves</h1>
+                    <div>
+                      <h1 className="tile-title">Commnunity initiaves</h1>
+                      <Link
+                        className="see-more-btn btn-hover-underline-accent"
+                        to={`/initiatives`}
+                        aria-label={`See more`}
+                      >
+                        See more &rarr;
+                      </Link>
+                    </div>
+
                     <h1 className="tile-subtitle">
                       Join one of HOGE community initiatives
                     </h1>

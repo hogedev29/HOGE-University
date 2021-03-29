@@ -144,11 +144,21 @@ main {
 //                            HOME STYLES
 //////////////////////////////////////////////////////////////////////////////
 
+.home {
+  padding-top: 3rem;
+  padding-bottom: 7rem;
+}
+
+.see-more-btn {
+  margin-left: 1rem;
+}
+
 .videos-tile {
   margin-bottom: 3rem;
 }
 
 .tile-title {
+  display: inline-block;
   color: #363636;
   font-size: 1.7rem;
   font-weight: bold;
@@ -160,9 +170,8 @@ main {
 }
 
 .videos-list {
-  display: flex;
   margin-top: 2.5rem;
-
+  display: flex;
   li {
     margin-right: 2rem;
   }
@@ -171,5 +180,41 @@ main {
 .initiaves-container {
   .initiatives {
     margin-top: 1.7rem;
+
+    li {
+      width: 60%;
+      margin-bottom: 1rem;
+      display: inline-block;
+    }
   }
+}
+
+//////////////////////////////////////////////////////////////////////////////
+//                            VIDEOS STYLES
+//////////////////////////////////////////////////////////////////////////////
+
+.videos-page {
+  padding-top: 3.5rem;
+  padding-bottom: 5rem;
+
+  .videos-page-list {
+    .video-container {
+      margin-top: 0.5rem;
+      padding: 0;
+    }
+
+    .video-title {
+      padding-top: 0.7rem;
+      padding-bottom: 0.7rem;
+    }
+
+    li {
+      float: left;
+      margin-right: 2rem;
+    }
+  }
+}
+
+.clear {
+  clear: both;
 }

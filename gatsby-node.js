@@ -76,7 +76,7 @@ exports.createPages = async ({ actions, graphql }) => {
   // create page for each mdx file
   data.allMdx.nodes.forEach((page) => {
     createPage({
-      path: page.frontmatter.slug,
+      path: `/faq/${page.frontmatter.slug}`,
       component: template,
       context: {
         subtitle: page.frontmatter.subtitle,

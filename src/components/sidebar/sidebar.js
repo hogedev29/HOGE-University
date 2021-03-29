@@ -4,6 +4,14 @@ import "./sidebar.scss";
 import { Link, StaticQuery, graphql } from "gatsby";
 import { Menu } from "react-bulma-components";
 
+const setActive = ({ location: { pathname } }, target) => {
+  if (pathname.includes(target)) {
+    return {
+      className: "active",
+    };
+  }
+};
+
 export const SideMenu = ({ className, show }) => (
   <StaticQuery
     query={graphql`
@@ -40,7 +48,10 @@ export const SideMenu = ({ className, show }) => (
                   const name = slices.join(" ");
                   return (
                     <Menu.List.Item>
-                      <Link activeClassName="active" to={"/" + slug}>
+                      <Link
+                        getProps={(props) => setActive(props, slug)}
+                        to={"/faq/" + slug}
+                      >
                         {capitalize(name)}
                       </Link>
                     </Menu.List.Item>

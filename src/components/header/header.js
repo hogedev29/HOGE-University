@@ -67,8 +67,8 @@ const WideNavBar = () => (
         </li>
         <li className="main-menu-item">
           <Link
-            getProps={(props) => setActive(props, "/what-is-hoge")}
-            to={"/what-is-hoge"}
+            getProps={(props) => setActive(props, "/faq")}
+            to={"/faq/what-is-hoge"}
           >
             F.A.Q
           </Link>
@@ -79,6 +79,14 @@ const WideNavBar = () => (
             to={"/school"}
           >
             Crypto School
+          </Link>
+        </li>
+        <li className="main-menu-item">
+          <Link
+            getProps={(props) => setActive(props, "/videos")}
+            to={"/videos"}
+          >
+            Videos
           </Link>
         </li>
         <li className="main-menu-item">
