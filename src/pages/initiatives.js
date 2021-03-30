@@ -1,11 +1,13 @@
 import React from "react";
-import Links from "./links";
+import Layout from "../components/layout";
+import { Container } from "react-bulma-components";
 import { StaticQuery, graphql } from "gatsby";
+import Links from "../components/elements/links";
 
-const Initiatives = ({ className }) => (
+const InitiativesList = ({ className }) => (
   <StaticQuery
     query={graphql`
-      query websites {
+      query AllInitiatives {
         allCommunityWebsitesJson {
           edges {
             node {
@@ -33,4 +35,14 @@ const Initiatives = ({ className }) => (
   />
 );
 
-export default Initiatives;
+const InitiativesPage = () => (
+  <Layout>
+    <Container className="initiatives-page">
+      <h1 className="page-title">HOGE Community Initiatives</h1>
+      <h1 className="page-subtitle">Join one of the community initiatives</h1>
+      <InitiativesList className="initiatives-container" />
+    </Container>
+  </Layout>
+);
+
+export default InitiativesPage;

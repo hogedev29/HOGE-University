@@ -115,7 +115,9 @@ main {
   display: inline-flex;
   list-style-type: none;
   li {
-    margin-right: 2rem;
+    margin-right: 1rem;
+    margin-top: 0.5rem;
+
     float: left;
     .course-item {
       display: inline-block;
@@ -204,7 +206,6 @@ main {
 
   .videos-page-list {
     .video-container {
-      margin-top: 0.5rem;
       padding: 0;
     }
 
@@ -215,11 +216,30 @@ main {
 
     li {
       float: left;
-      margin-right: 2rem;
+      margin-right: 1rem;
+      margin-top: 1rem;
     }
   }
 }
 
-.clear {
-  clear: both;
+//////////////////////////////////////////////////////////////////////////////
+//                            INITIATIVE STYLES
+//////////////////////////////////////////////////////////////////////////////
+.initiatives-page {
+  padding-top: 3.5rem;
+  padding-bottom: 5rem;
+
+  .initiatives-container {
+    margin-top: 3rem;
+
+    ul {
+      overflow: hidden;
+    }
+    li {
+      margin-right: 1rem;
+      margin-top: 1rem;
+      float: left;
+      width: 16rem;
+    }
+  }
 }

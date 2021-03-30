@@ -1,13 +1,13 @@
 import React, { useState } from "react";
 import { Router } from "@reach/router";
-import { useStaticQuery, Link, graphql } from "gatsby";
+import { StaticQuery, useStaticQuery, Link, graphql } from "gatsby";
 import Layout from "../components/layout";
 import ArticlesList from "../components/articles/articles-list";
 import Article from "../components/articles/article";
-import { Columns, Section, Button } from "react-bulma-components";
+import { Button } from "react-bulma-components";
 import postData from "../utils";
 import Video from "../components/elements/video";
-import Initiatives from "../components/elements/initiatives";
+import Links from "../components/elements/links";
 
 const ArticlesPage = () => {
   const [skip, setSkip] = useState(2);
@@ -95,6 +95,24 @@ const ArticlesPage = () => {
             description
           }
         }
+
+        allCommunityWebsitesJson(limit: 4) {
+          edges {
+            node {
+              id
+              title
+              subtitle
+              url
+              fields {
+                linkImage {
+                  childImageSharp {
+                    gatsbyImageData(width: 250, height: 250)
+                  }
+                }
+              }
+            }
+          }
+        }
       }
     `
   );
@@ -160,7 +178,9 @@ const ArticlesPage = () => {
       </div>
 
       <h1 className="tile-subtitle">Join one of HOGE community initiatives</h1>
-      <Initiatives className="initiatives" />
+      <div className="initiatives">
+        <Links links={data.allCommunityWebsitesJson.edges} />
+      </div>
     </div>
   );
 
